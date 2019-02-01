@@ -1,0 +1,41 @@
+include ../includes/bemto
+include ../includes/mixins
+
+mixin doc-header()
+    head
+        meta(charset='utf-8')
+        //- meta(name='description', content='Коллегия адвокатов и юристов в Москве и Московской области. Надежное решение Вашей проблемы 24/7. Опыт 16 лет.')
+        meta(name='keywords', content='')
+        meta(content='IE=edge')&attributes({'http-equiv': "X-UA-Compatible"})
+        meta(name='viewport', content='width=device-width, initial-scale=1')
+        title Пропискин
+        link(rel='icon' type='image/png' href='/favicon_16.png' sizes='16x16')  
+        link(rel='icon' type='image/png' href='/favicon_32.png' sizes='32x32')  
+        link(rel='icon' type='image/png' href='/favicon_96.png' sizes='96x96')  
+        meta(name="theme-color" content="#3aa5ed")
+        // Google Tag Manager
+        script.
+            (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','#{googleTagManager}');
+        // End Google Tag Manager
+
+        <script src="//st.yagla.ru/js/y.c.js?h=014b3304af34ff389da047b2cf526266"></script>
+
+        
+        //- link(href="libs/font-awesome-4.7.0/css/font-awesome.min.css", rel='stylesheet')
+
+        // build:css css/vendor.css    
+        link(href='libs/bootstrap.css', rel='stylesheet')
+        link(href='libs/slick/slick.css', rel='stylesheet')
+        link(href='libs/select2/select2.min.css', rel='stylesheet')
+        //-link(href='libs/slick/slick-theme.css', rel='stylesheet')
+        //- link(href='libs/fancybox/jquery.fancybox.css', rel='stylesheet')
+        // endbuild
+        // build:css css/main.css
+        link(href='css/main.css', rel='stylesheet')
+        // endbuild 
+        //[if lte IE 9]>
+                <script src="libs/ie/html5shiv.js"></script>
+                <script src="libs/ie/respond.src.js"></script>
+                <script src="libs/ie/respond.matchmedia.addListener.src.js"></script>
+                <script src="libs/polyfills/background_size_emu.js"></script>
+                <![endif]

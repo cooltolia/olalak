@@ -1,0 +1,22 @@
+include template/header
+include template/footer
+include ../blocks/**/*
+- var alias = "m"
+doctype
+html(lang='ru')
+  +doc-header
+  body.pageload.no-js
+    //- Google Tag Manager (noscript)
+    noscript
+        iframe(src='https://www.googletagmanager.com/ns.html?id=' + googleTagManager, height='0', width='0', style='display:none;visibility:hidden')
+    //- End Google Tag Manager (noscript)
+    +svg-gradient('svg-linear-gradient')
+    +top-screen
+    +problems
+    +appeal
+    +prices
+    +testimonials
+    +services
+    +advantages
+    +modal
+    +doc-footer

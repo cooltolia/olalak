@@ -1,0 +1,8 @@
+mixin advantages()
+    +b.SECTION.advantages
+        +inner
+            +e.title
+                +title
+            +e.UL.list
+                for advantage in advantages.list
+                    +e.LI.item= advantage

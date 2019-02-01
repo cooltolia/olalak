@@ -1,0 +1,23 @@
+mixin modal()
+    #modal1.modal.fade(tabindex='-1', role='dialog')
+        .modal-dialog(role='document')
+            .modal-content
+                .modal-header
+                    button.close(type='button', data-dismiss='modal', aria-label='Close')
+                        span(aria-hidden='true') ×
+                .modal-body
+                    form.modal-form(action='/sendform.php', method='post')
+                        .modal-input-row
+                            label.modal-label(for='modal_name') Имя
+                            input.modal-input(type='text' id='modal_name' name='name')
+                        .modal-input-row
+                            label.modal-label(for='modal_tel1') Телефон
+                            input.modal-input(id='modal_tel1' name='phone' data-inputmask="'mask': '+7 (999) 999 99 99'" required placeholder='+7 (___) ___ __ __')
+                        input(type='hidden' name='site' value='Основной')
+                        input(type='hidden' name="service" value='Получить прогноз')
+                        button.modal-submit(type='submit' name='submit' disabled) Получить прогноз
+                        .modal-legal
+                            | Нажимая на кнопку, Вы подтверждаете, что ознакомились с 
+                            a(href='#modalLegal', data-toggle='modal', data-target='#modalLegal') Политикой конфиденциальности
+                            |  и даете согласие на обработку персональных данных
+    

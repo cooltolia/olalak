@@ -1,0 +1,36 @@
+mixin prices()
+    - var titleModifier = prices.modifier ? prices.modifier : ""
+    +b.SECTION.prices
+        +inner
+            +e.title
+                +title(titleModifier)
+                    | #{prices.title}
+            +e.content
+                each table in prices.tables
+                    +e.table
+                        +e.H3.table-title= table.title
+                        +e.table-wrapper
+                            +e.TABLE.table-data(class='prices__table-data--' + table.modifier)
+                                +e.THEAD.table-header
+                                    each th in table.headers
+                                        th= th
+                                +e.TBODY.table-body
+                                    each row in table.rows
+                                        +e.TR.table-row
+                                            each cell in row.cells
+                                                if cell.inner_table
+                                                    +e.TD.table-cell.--no-padding
+                                                        +e.TABLE.inner-table
+                                                            each item in cell.inner_table
+                                                                tr
+                                                                    +e.TD.inner-cell
+                                                                        +e.SPAN.cell-data-item= item
+                                                else
+                                                    +e.TD.table-cell
+                                                        +e.SPAN.cell-data
+                                                            each item in cell.content
+                                                                +e.SPAN.cell-data-item= item
+                        +e.additional
+                            each paragraph in table.additional
+                                +e.P.additional-paragraph
+                                    | #{paragraph}

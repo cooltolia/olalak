@@ -1,0 +1,46 @@
+.map {
+    position: relative;
+    font-family: $opsans;
+    color: $darktext;
+
+    background-size: cover;
+    background-position: center;
+}
+
+
+.map__inner {
+    height: 342px;
+    // max-width: 1920px;
+    margin: 0 auto;
+
+    background-image: url('../images/map.jpg');
+    background-size: cover;
+    background-position: center;
+}
+
+.map__fallback {
+    display: none;
+    height: 342px; 
+    margin: 0 auto;
+
+    background-image: url('../images/map.jpg');
+    background-size: cover;
+    background-position: center;
+}
+
+@media #{$tablet} {
+    .map__inner {
+        height: 400px;
+    }
+
+    .map__fallback {
+        height: 400px;
+    }
+}
+
+
+@media #{$desktop} {
+    .map__info {
+        right: 10%;
+    }
+}

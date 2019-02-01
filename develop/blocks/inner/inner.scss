@@ -1,0 +1,28 @@
+.inner {
+    position: relative;
+    width: 100%;
+    margin: 0 auto;
+    min-width: 300px;
+    max-width: 480px;
+    padding: 0 10px;
+}
+
+@media (min-width: 481px) {
+    .inner {
+        max-width: 740px;
+    }
+}
+
+@media #{$tablet} {
+    .inner {
+        max-width: 840px;
+        padding: 0 40px;
+    }
+}
+
+@media #{$desktop} {
+    .inner {
+        max-width: 1440px;
+        padding: 0 80px;
+    }
+}
