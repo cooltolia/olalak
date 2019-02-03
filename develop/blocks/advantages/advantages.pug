@@ -1,8 +1,14 @@
 mixin advantages()
     +b.SECTION.advantages
         +inner
-            +e.title
-                +title
+            +e.H2.title
+                | Почему клиенты выбирают нас
             +e.UL.list
-                for advantage in advantages.list
-                    +e.LI.item= advantage
+                for item, index in advantages
+                    +e.LI.item
+                        +e.item-icon
+                            img(src="images/advantages/advantage" + index + ".svg" , alt="")
+                        +e.item-title= item.title
+                        +e.P.item-text= item.text
+            +e.form
+                +main-form

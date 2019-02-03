@@ -7,13 +7,11 @@ $tablet: "(min-width: 768px)";
 $desktop: "(min-width: 1440px)";
 
 $base-font-size: 16px;
-$roboto: 'Roboto Condensed', Helvetica, Arial, sans-serif;
-$opsans: 'Open Sans', Helvetica, Arial, sans-serif;
+$gotham: 'Gotham Pro', Helvetica, Arial, sans-serif;
 
-$themecolor: #E75F25;
-$darkthemecolor: #C83F21;
-$lightthemecolor: #F0AB52;
-$darktext: #050505;
+$themecolor: #f15d2b;
+$darktext: #131313;
+$darkgreytext: #5d5d5d;
 $lighttext: #ffffff;
 
 @mixin btn-theme($themecolor: $themecolor) {
@@ -22,18 +20,18 @@ $lighttext: #ffffff;
     justify-content: center;
     align-items: center;
     
-    font-size: 16px;
+    font-size: 20px;
     color: $lighttext;
-    font-family: $roboto;
-    font-weight: 700;
+    font-family: $gotham;
+    font-weight: 500;
 
-    border-radius: 20px;
+    border-radius: 40px;
     background-color: $themecolor;
     cursor: pointer;
     text-decoration: none;
     border: none;
 
-    box-shadow: 0px 4px 12px rgba(230, 95, 37, 0.5);
+    // box-shadow: 0px 4px 12px rgba(230, 95, 37, 0.5);
 
     transition: all 300ms ease;
 
@@ -49,10 +47,6 @@ $lighttext: #ffffff;
     &:active {
         background-color: darken($themecolor, 20%);
     }
-
-    @media #{$desktop} {
-        box-shadow: 0px 7.44161px 22.3248px rgba(230, 95, 37, 0.5);
-    }
 }
 
 @mixin btn-light {
@@ -62,7 +56,7 @@ $lighttext: #ffffff;
 
     align-items: center;
     color: $lighttext;
-    font-family: $opsans;
+    font-family: $gotham;
     font-weight: 400;
     border-radius: 50px;
 
@@ -120,8 +114,6 @@ $lighttext: #ffffff;
     height: 100%;
     top: 0;
     left: 0;
-
-    fill: url('#svg-linear-gradient')
 }
 
 @mixin img {
@@ -136,7 +128,7 @@ $lighttext: #ffffff;
     padding-top: 40px;
     padding-bottom: 40px;
 
-    font-family: $roboto;
+    font-family: $gotham;
     color: $darktext;
     
     @media #{$desktop} {

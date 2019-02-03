@@ -1,2 +1,6 @@
 mixin main-nav()
-    +b.SECTION.main-nav
+    +b.NAV.main-nav
+        +e.UL.list
+            for item in menu
+                +e.LI.item
+                    +e.A.link(href=item.link)= item.label

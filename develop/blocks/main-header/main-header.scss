@@ -1,3 +1,49 @@
 .main-header {
-    
+    display: flex;
+    align-items: center;
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 0 25px;
+
+    font-family: $gotham;
+}
+
+.main-header__logo {
+    position: relative;
+    width: 60px;
+    height: 111px;
+    margin-right: 170px;
+    background-color: #fff;
+
+    img {
+        @include svg-icon
+    }
+}
+
+.main-header__navigation {
+    flex: auto;
+    margin-right: 120px;
+}
+
+.main-header__phone {
+    position: relative;
+    padding-left: 38px;
+    margin-left: auto;
+
+    color: $darktext;
+    font-size: 18px;
+    font-weight: 500;
+
+    &::before {
+        content: '';
+        position: absolute;
+        width: 23px;
+        height: 22px;
+        top: 50%;
+        left: 0;
+        transform: translateY(-50%);
+
+        background-image: url('../images/call.png');
+        background-size: cover;
+    }
 }

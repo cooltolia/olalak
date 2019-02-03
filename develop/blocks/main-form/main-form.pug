@@ -1,0 +1,11 @@
+mixin main-form()
+    +b.SECTION.main-form
+        +e.H3.title Запишись к нам в гости
+        +e.FORM.form(method='post' action='#')
+            +e.row
+                +e.block
+                    +e.INPUT.input(type='text' placeholder='Имя' name='name')
+                +e.block
+                    +e.INPUT.input(type='text' placeholder='Телефон' name='phone' data-inputmask="'mask': '+7 (999) 999 99 99'" required)
+                +e.block
+                    +e.BUTTON.submit(type='submit') Записаться

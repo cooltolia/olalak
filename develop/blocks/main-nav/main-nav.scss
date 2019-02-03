@@ -1,3 +1,51 @@
 .main-nav {
-    
+    color: #656565;
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 5px;
+    text-transform: uppercase;
+}
+
+.main-nav__list {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+
+    display: flex;
+    align-items: center;
+}
+
+.main-nav__item {
+    padding: 0 20px;
+
+    &:first-child {
+        margin-right: 105px;
+
+        .main-nav__link {
+            color: #fff;
+
+            &:hover,
+            &:focus,
+            &:active {
+                color: $themecolor;
+                text-decoration: none;
+            }
+        }
+    }
+}
+
+.main-nav__link {
+    display: block;
+
+    color: #656565;
+    text-decoration: none;
+
+    transition: color 300ms ease;
+
+    &:hover,
+    &:focus,
+    &:active {
+        color: $themecolor;
+        text-decoration: none;
+    }
 }
