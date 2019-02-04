@@ -1026,7 +1026,8 @@ body.modal-open {
 
 .promo {
   padding-bottom: 170px;
-  color: #131313; }
+  color: #131313;
+  font-family: "Gotham Pro", Helvetica, Arial, sans-serif; }
 
 .promo__slide-inner {
   display: -webkit-box;
@@ -1080,7 +1081,6 @@ body.modal-open {
 
 .sliders-wrapper {
   width: 100%;
-  height: 1752px;
   background-image: url("../images/sliders-wrapper/bg.svg");
   background-size: 100% 100%;
   background-position: center;
@@ -1178,6 +1178,7 @@ body.modal-open {
   position: relative;
   padding-top: 25px;
   padding-bottom: 100px;
+  min-height: 100vh;
   font-family: "Gotham Pro", Helvetica, Arial, sans-serif;
   background-image: -webkit-gradient(linear, left top, right top, from(#77112c), color-stop(35%, #77112c), color-stop(35%, transparent));
   background-image: -webkit-linear-gradient(left, #77112c 0%, #77112c 35%, transparent 35%);
@@ -1237,6 +1238,67 @@ body.modal-open {
 @media (max-width: 1280px) {
   .top-screen__socials {
     right: -12%; } }
+
+.works {
+  font-family: "Gotham Pro", Helvetica, Arial, sans-serif;
+  color: #131313; }
+
+.works__content {
+  position: relative;
+  padding: 90px 40px 38px;
+  background-color: #fff; }
+
+.works__title {
+  position: absolute;
+  top: 50px;
+  left: 75px;
+  font-size: 55px;
+  line-height: 1.1;
+  font-weight: 900;
+  text-transform: uppercase; }
+
+.works__slider {
+  width: 100%; }
+
+.works__images {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+     -moz-box-orient: horizontal;
+     -moz-box-direction: normal;
+      -ms-flex-flow: row wrap;
+          flex-flow: row wrap;
+  margin: 0 -11px; }
+  .works__images::before {
+    content: '';
+    position: relative;
+    width: 498px;
+    margin-right: 11px;
+    -webkit-box-flex: 0;
+       -moz-box-flex: 0;
+        -ms-flex: 0 0 auto;
+            flex: 0 0 auto;
+    margin: 0 11px 22px; }
+
+.works__image {
+  position: relative;
+  -webkit-box-flex: 0;
+     -moz-box-flex: 0;
+      -ms-flex: 0 0 auto;
+          flex: 0 0 auto;
+  width: 238px;
+  height: 238px;
+  margin: 0 11px 22px; }
+  .works__image img {
+    position: absolute;
+    display: block;
+    width: 100%;
+    height: auto;
+    max-width: 100%;
+    max-height: 100%; }
 
 body {
   background-color: #f1f1f1; }

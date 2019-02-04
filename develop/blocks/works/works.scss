@@ -1,3 +1,55 @@
 .works {
-    
+    font-family: $gotham;
+    color: $darktext
 }
+
+.works__content {
+    position: relative;
+    padding: 90px 40px 38px;
+
+    background-color: #fff;
+}
+
+.works__title {
+    position: absolute;
+    top: 50px;
+    left: 75px;
+
+    font-size: 55px;
+    line-height: 1.1;
+    font-weight: 900;
+    text-transform: uppercase;
+}
+
+.works__slider {
+    width: 100%;
+}
+
+.works__images {
+    display: flex;
+    flex-flow: row wrap;
+    margin: 0 -11px;
+
+    &::before {
+        content: '';
+        position: relative;
+        width: 498px;
+        margin-right: 11px;
+        flex: 0 0 auto;
+        margin: 0 11px 22px;
+    }
+}
+
+.works__image {
+    position: relative;
+    flex: 0 0 auto;
+    width: 238px;
+    height: 238px;
+    margin: 0 11px 22px;
+
+    img {
+        position: absolute;
+        @include img;
+    }
+}
+
