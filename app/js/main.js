@@ -624,27 +624,25 @@ jQuery(document).ready(function ($) {
 
              infinite: true,
 
-             slidesToShow: 1,
+             slidesToShow: 3,
 
-             slidesToScroll: 1,
+             slidesToScroll: 3,
 
-             adaptiveHeight: true,
+             adaptiveHeight: false,
 
-             mobileFirst: true,
+             // responsive: [{
 
-             responsive: [{
+             //     breakpoint: 769,
 
-                 breakpoint: 769,
+             //     settings: {
 
-                 settings: {
+             //         slidesToShow: 2,
 
-                     slidesToShow: 2,
+             //         slidesToScroll: 1,
 
-                     slidesToScroll: 1,
+             //     }
 
-                 }
-
-             }]
+             // }]
 
          });
 

@@ -1,19 +1,15 @@
 mixin testimonials()
     +b.SECTION.testimonials
         +inner
-            +e.title
-                +title
-                    | #{testimonials.title}
-            +e.slider
-                each item, index in testimonials.list
-                    +e.slide
-                        +e.slide-inner
-                            +e.column.--with-border
+            +e.content
+                +e.H2.title Отзывы
+                +e.slider
+                    each item, index in testimonials.list
+                        +e.slide
+                            +e.slide-inner
                                 +e.slide-image
-                                    img(src='images/testimonials/slide' + (index + 1) + '.jpg')
+                                    img(src='images/testimonials/slide' +   index + '.jpg')
                                 +e.slide-author= item.name
-                            +e.column
-                                +e.slide-title= item.title
                                 +e.slide-text
                                     each paragraph in item.text
                                         +e.P= paragraph
