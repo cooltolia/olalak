@@ -465,6 +465,34 @@ th {
   max-width: 1280px;
   padding: 0 85px; }
 
+.interior {
+  padding-top: 100px;
+  padding-bottom: 90px;
+  background-image: url("../images/interior/bg.jpg");
+  background-size: cover;
+  background-position: center;
+  color: #131313; }
+
+.interior__title {
+  margin: 0;
+  margin-bottom: 55px;
+  padding-left: 10px;
+  font-size: 48px;
+  font-weight: 700;
+  text-transform: uppercase; }
+
+.interior__slider {
+  margin: 0 -8px; }
+
+.interior__image {
+  padding: 0 4px; }
+  .interior__image img {
+    display: block;
+    width: 100%;
+    height: auto;
+    max-width: 100%;
+    max-height: 100%; }
+
 .main-form {
   padding: 35px 45px 50px;
   font-family: "Gotham Pro", Helvetica, Arial, sans-serif;
@@ -593,7 +621,10 @@ th {
   margin-left: auto;
   color: #131313;
   font-size: 18px;
-  font-weight: 500; }
+  font-weight: 500;
+  -webkit-transition: color 300ms ease;
+  -moz-transition: color 300ms ease;
+  transition: color 300ms ease; }
   .main-header__phone::before {
     content: '';
     position: absolute;
@@ -607,6 +638,9 @@ th {
             transform: translateY(-50%);
     background-image: url("../images/call.png");
     background-size: cover; }
+  .main-header__phone:hover, .main-header__phone:focus, .main-header__phone:active {
+    text-decoration: none;
+    color: #f15d2b; }
 
 .main-nav {
   color: #656565;
@@ -832,197 +866,97 @@ body.modal-open {
     font-size: 16px; } }
 
 .prices {
-  padding-top: 40px;
-  padding-bottom: 40px;
+  padding-top: 45px;
+  padding-bottom: 80px;
   font-family: "Gotham Pro", Helvetica, Arial, sans-serif;
-  color: #131313;
-  line-height: normal; }
-
-.prices__title {
-  margin-bottom: 24px; }
+  color: #131313; }
 
 .prices__content {
-  width: 100%; }
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: flex; }
+
+.prices__heading {
+  width: 47%;
+  background-image: url("../images/prices/bg.jpg");
+  background-size: cover;
+  background-position: bottom right; }
+
+.prices__title {
+  padding: 65px 50px 0;
+  font-size: 55px;
+  font-weight: 900;
+  text-transform: uppercase;
+  color: #fff; }
+
+.prices__slider {
+  width: 53%;
+  background-color: #fff; }
 
 .prices__table {
-  margin-bottom: 40px; }
-  .prices__table:last-child {
-    margin-bottom: 0; }
+  padding: 50px 45px; }
 
-.prices__table-title {
-  margin-bottom: 16px;
-  font-size: 16px;
+.prices__table-row {
+  position: relative;
+  margin-bottom: 0;
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: baseline;
+     -moz-box-align: baseline;
+      -ms-flex-align: baseline;
+          align-items: baseline;
+  padding: 24px 50px;
+  color: #f15d2b;
+  font-size: 20px;
   font-weight: 700;
-  text-align: center; }
-
-.prices__table-wrapper {
-  width: 100%;
-  margin-bottom: 20px;
-  overflow: hidden; }
-
-.prices__table-data {
-  position: relative;
-  display: block;
-  width: 100%;
-  background-color: #aaa;
-  overflow: hidden;
-  border-collapse: collapse; }
-
-.prices__table-header {
-  position: relative;
-  display: block;
-  width: 100%;
-  overflow: visible; }
-  .prices__table-header th {
-    padding: 10px;
+  border-radius: 40px;
+  -webkit-transition: background 300ms ease, color 300ms ease;
+  -moz-transition: background 300ms ease, color 300ms ease;
+  transition: background 300ms ease, color 300ms ease; }
+  .prices__table-row:hover {
     background-color: #f15d2b;
-    border: 2px solid white;
-    min-width: 190px;
-    font-size: 12px;
-    font-weight: 700;
-    text-align: center;
-    color: #ffffff; }
-    .prices__table-header th:first-child {
-      position: relative;
-      min-width: 105px;
-      -webkit-box-shadow: 0 0 0 1px white;
-              box-shadow: 0 0 0 1px white;
-      border-left-width: 0; }
+    color: #fff; }
+    .prices__table-row:hover .prices__divider {
+      border-color: #fff; }
+  .prices__table-row::after {
+    content: '';
+    position: absolute;
+    width: -webkit-calc(100% - 100px);
+    width: -moz-calc(100% - 100px);
+    width: calc(100% - 100px);
+    height: 1px;
+    left: 50px;
+    bottom: 0;
+    background-color: rgba(91, 88, 82, 0.1); }
+  .prices__table-row:last-child::after {
+    display: none; }
 
-.prices__table-body {
-  position: relative;
-  display: block;
-  width: 100%;
-  margin-top: -2px;
-  height: 439px;
-  overflow: scroll; }
+.prices__service {
+  margin-right: 15px;
+  -webkit-box-flex: 0;
+     -moz-box-flex: 0;
+      -ms-flex: 0 0 auto;
+          flex: 0 0 auto; }
 
-.prices__table-cell {
-  background-color: #FCFCFC;
-  border: 2px solid white;
-  min-width: 190px;
-  font-size: 12px; }
-  .prices__table-cell:nth-child(1) {
-    position: relative;
-    background-color: #F2F2F2;
-    min-width: 105px;
-    -webkit-box-shadow: 0 0 0 1px white;
-            box-shadow: 0 0 0 1px white;
-    border-left-width: 0; }
-  .prices__table-cell:nth-child(2) .prices__cell-data {
-    text-align: left; }
-  .prices__table-cell.prices__table-cell--no-padding {
-    padding: 0; }
+.prices__price {
+  margin-left: 15px;
+  -webkit-box-flex: 0;
+     -moz-box-flex: 0;
+      -ms-flex: 0 0 auto;
+          flex: 0 0 auto; }
 
-.prices__table-data--type1 .prices__table-cell:nth-child(1) {
-  font-size: 14px;
-  font-weight: 700; }
-
-.prices__table-data--type1 .prices__table-cell:nth-child(2) {
-  font-size: 10px; }
-
-.prices__cell-data {
-  display: block;
-  padding: 10px;
-  text-align: center; }
-
-.prices__cell-data-item {
-  display: block;
-  margin-bottom: 10px; }
-  .prices__cell-data-item:last-child {
-    margin-bottom: 0; }
-
-.prices__inner-table {
-  width: 100%;
-  height: 100%; }
-  .prices__inner-table tr:nth-child(2n) td {
-    background-color: #ffffff; }
-
-.prices__inner-cell {
-  padding: 12px 16px;
-  font-size: 12px;
-  text-align: center; }
-
-.prices__additional {
-  font-size: 12px;
-  font-weight: 400; }
-
-.prices__additional-paragraph {
-  margin: 0;
-  margin-bottom: 12px; }
-  .prices__additional-paragraph:last-child {
-    margin-bottom: 0; }
-
-@media (min-width: 768px) {
-  .prices__table-data {
-    display: table;
-    width: 100%;
-    overflow-y: auto;
-    table-layout: fixed; }
-  .prices__table-cell {
-    display: table-cell; }
-  .prices__table-header {
-    display: table-header-group; }
-    .prices__table-header th {
-      padding: 16px; }
-      .prices__table-header th:first-child {
-        width: 160px; }
-      .prices__table-header th:nth-child(2) {
-        width: 305px; }
-  .prices__table-body {
-    display: table-row-group; }
-  .prices__table-row {
-    display: table-row;
-    width: 100%; }
-  .prices__table-cell {
-    padding: 16px; }
-    .prices__table-cell:first-child {
-      width: 160px; }
-    .prices__table-cell:nth-child(2) {
-      width: 305px; } }
-
-@media (min-width: 1440px) {
-  .prices {
-    padding-top: 80px;
-    padding-bottom: 80px; }
-  .prices__title {
-    margin-bottom: 48px; }
-  .prices__table-title {
-    margin-bottom: 32px;
-    font-size: 32px; }
-  .prices__table {
-    margin-bottom: 80px; }
-  .prices__table-wrapper {
-    margin-bottom: 40px; }
-  .prices__table-header th {
-    padding: 16px 30px;
-    border: 3px solid white;
-    font-size: 22px; }
-    .prices__table-header th:first-child {
-      width: 295px; }
-    .prices__table-header th:nth-child(2) {
-      width: 567px; }
-  .prices__table-cell {
-    border: 3px solid white;
-    font-size: 22px; }
-  .prices__table-data--type1 .prices__table-cell:nth-child(1) {
-    font-size: 26px; }
-  .prices__table-data--type1 .prices__table-cell:nth-child(2) {
-    font-size: 18px; }
-  .prices__table-data--type2 .prices__table-header th {
-    padding: 28px; }
-    .prices__table-data--type2 .prices__table-header th:nth-child(2) {
-      width: 440px; }
-    .prices__table-data--type2 .prices__table-header th:nth-child(3) {
-      width: 268px; }
-  .prices__cell-data-item {
-    margin-bottom: 18px; }
-  .prices__inner-cell {
-    font-size: 22px; }
-  .prices__additional {
-    font-size: 22px; }
-  .prices__additional-paragraph {
-    margin-bottom: 20px; } }
+.prices__divider {
+  -webkit-box-flex: 1;
+     -moz-box-flex: 1;
+      -ms-flex: 1 1 auto;
+          flex: 1 1 auto;
+  border-bottom: 1px dashed #ccc;
+  -webkit-transition: border 300ms ease;
+  -moz-transition: border 300ms ease;
+  transition: border 300ms ease; }
 
 .promo {
   padding-bottom: 170px;
@@ -1160,6 +1094,8 @@ body.modal-open {
     background-image: url("../images/socials/facebook.svg"); }
 
 .testimonials {
+  padding-top: 111px;
+  padding-bottom: 140px;
   font-family: "Gotham Pro", Helvetica, Arial, sans-serif;
   color: #3c3c3c; }
 
@@ -1171,27 +1107,27 @@ body.modal-open {
   background-image: linear-gradient(to bottom, #fcfcfc 0%, #fcfcfc 50%, #1b93b0 50%); }
 
 .testimonials__title {
+  margin: 0;
+  margin-bottom: 75px;
   color: #131313;
   font-size: 48px;
   font-weight: 700;
   text-transform: uppercase; }
 
+.testimonials__slider .slick-list {
+  padding: 0 2px; }
+
 .testimonials__slide-inner {
   margin-right: -1px;
   position: relative;
-  border-radius: 4px;
-  border: 1px solid #e1e1e1;
-  background-color: #ffffff;
-  -webkit-box-shadow: 0 2px 4px rgba(0, 0, 0, 0.17);
-          box-shadow: 0 2px 4px rgba(0, 0, 0, 0.17);
   font-family: Helvetica, sans-serif; }
 
 .testimonials__slide-image {
   position: relative;
-  top: -51px;
-  margin-bottom: 20px;
+  margin: 0 auto;
   width: 102px;
   height: 102px;
+  z-index: 1;
   border-radius: 50%; }
   .testimonials__slide-image img {
     display: block;
@@ -1200,11 +1136,23 @@ body.modal-open {
     max-width: 100%;
     max-height: 100%; }
 
+.testimonials__slide-content {
+  padding: 51px 35px 35px;
+  margin-top: -51px;
+  position: relative;
+  border-radius: 4px;
+  border: 1px solid #e1e1e1;
+  background-color: #ffffff;
+  -webkit-box-shadow: 0 2px 4px rgba(0, 0, 0, 0.17);
+          box-shadow: 0 2px 4px rgba(0, 0, 0, 0.17); }
+
 .testimonials__slide-author {
+  margin-top: 20px;
   margin-bottom: 25px;
   font-size: 18px;
   color: #f15d2b;
-  font-weight: 700; }
+  font-weight: 700;
+  text-align: center; }
 
 .testimonials__slide-text {
   font-size: 14px;

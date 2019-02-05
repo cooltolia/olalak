@@ -9,7 +9,8 @@ mixin testimonials()
                             +e.slide-inner
                                 +e.slide-image
                                     img(src='images/testimonials/slide' +   index + '.jpg')
-                                +e.slide-author= item.name
-                                +e.slide-text
-                                    each paragraph in item.text
-                                        +e.P= paragraph
+                                +e.slide-content
+                                    +e.slide-author= item.name
+                                    +e.slide-text
+                                        each paragraph in item.text
+                                            +e.P= paragraph

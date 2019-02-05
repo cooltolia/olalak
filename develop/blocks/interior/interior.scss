@@ -1,3 +1,32 @@
 .interior {
-    
+    padding-top: 100px;
+    padding-bottom: 90px;
+
+    background-image: url('../images/interior/bg.jpg');
+    background-size: cover;
+    background-position: center;
+
+    color: $darktext;
+}
+
+.interior__title {
+    margin: 0;
+    margin-bottom: 55px;
+    padding-left: 10px;
+
+    font-size: 48px;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+.interior__slider {
+    margin: 0 -8px;
+}
+
+.interior__image {
+    padding: 0 4px;
+
+    img {
+        @include img
+    }
 }
