@@ -1,4 +1,10 @@
 mixin map(id)
     +b.map(id='#{id}')
         +e.inner#map
-        +e.fallback
+        +e.data
+            +e.logo
+                img(src="", alt="")
+            +e.addresses
+                +e.address Ул. Ленина, 15
+                +e.address Ул. Московская,  22
+                +e.address Ул. Ленина, 15

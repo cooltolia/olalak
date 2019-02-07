@@ -2,45 +2,82 @@
     position: relative;
     font-family: $gotham;
     color: $darktext;
-
-    background-size: cover;
-    background-position: center;
 }
 
-
 .map__inner {
-    height: 342px;
+    height: 745px;
     // max-width: 1920px;
     margin: 0 auto;
 
-    background-image: url('../images/map.jpg');
-    background-size: cover;
-    background-position: center;
+    // background-image: url('../images/map.jpg');
+    // background-size: cover;
+    // background-position: center;
 }
 
-.map__fallback {
-    display: none;
-    height: 342px; 
-    margin: 0 auto;
-
-    background-image: url('../images/map.jpg');
-    background-size: cover;
-    background-position: center;
+.map__data {
+    position: absolute;
+    width: 378px;
+    background-color: $themecolor;
+    top: 36px;
+    left: 36px;
 }
 
-@media #{$tablet} {
-    .map__inner {
-        height: 400px;
+.map__logo {
+    position: relative;
+    width: 100%;
+    height: 386px;
+    background-color: #fff;
+}
+
+.map__addresses {
+    padding: 50px 20px;
+}
+
+.map__address {
+    position: relative;
+    display: inline-block;
+    padding: 13px 48px 13px 20px;
+    margin-bottom: 15px;
+
+    font-size: 14px;
+    text-decoration: none;
+    color: rgba($color: $lighttext, $alpha: 0.7);
+
+    border-radius: 22px;
+
+    transition: color 300ms ease, background-color 300ms ease;
+
+    cursor: pointer;
+
+    &::after {
+        content: "";
+        position: absolute;
+        width: 10px;
+        height: 10px;
+        top: 50%;
+        right: 33px;
+        transform: rotate(45deg) translateY(-75%);
+
+        border: 1px solid rgba($color: $lighttext, $alpha: 0.7);
+        border-left-width: 0;
+        border-bottom-width: 0;
+
+        transition: border 300ms ease;
     }
 
-    .map__fallback {
-        height: 400px;
+    &:hover,
+    &:active,
+    &:focus {
+        background-color: #fff;
+        color: #f5a623;
+        text-decoration: none;
+        
+        &::after {
+            border-color: #f5a623;
+        }
     }
-}
 
-
-@media #{$desktop} {
-    .map__info {
-        right: 10%;
+    &:last-child {
+        margin-bottom: 0;
     }
 }

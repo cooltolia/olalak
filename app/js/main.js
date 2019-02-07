@@ -80,46 +80,6 @@ jQuery(document).ready(function ($) {
 
          address = [55.775450, 37.631004];
 
-         var $map = $('#map');
-
-         var $mapFallback = $('.map__fallback');
-
-     
-
-         /** popup */
-
-     
-
-         var $header = $('.map__info-header'),
-
-             $body = $('.map__info-body');
-
-     
-
-         if ($(window).width() <= '767') {
-
-             $header.on('click', function () {
-
-     
-
-                 if ($header.hasClass('js-expanded')) {
-
-                     $body.slideUp();
-
-                     $header.removeClass('js-expanded');
-
-                 } else {
-
-                     $header.addClass('js-expanded');
-
-                     $body.slideDown();
-
-                 }
-
-             })
-
-         }
-
      
 
          //Переменная для определения была ли хоть раз загружена Яндекс.Карта (чтобы избежать повторной загрузки)
@@ -150,7 +110,9 @@ jQuery(document).ready(function ($) {
 
                          center: res.geoObjects.get(0).geometry.getCoordinates(),
 
-                         zoom: zoom
+                         zoom: zoom,
+
+                         controls: []
 
                      });
 
@@ -161,40 +123,6 @@ jQuery(document).ready(function ($) {
                          pointB = address;
 
      
-
-                     multiRoute = new ymaps.multiRouter.MultiRoute({
-
-                         referencePoints: [
-
-                             pointA,
-
-                             pointB
-
-                         ],
-
-                         params: {
-
-                             //Тип маршрутизации - пешеходная маршрутизация.
-
-                             routingMode: 'pedestrian',
-
-                         },
-
-                     }, {
-
-                             // Автоматически устанавливать границы карты так, чтобы маршрут был виден целиком.
-
-                             //boundsAutoApply: true
-
-                             wayPointIconLayout: "none",
-
-                             routeActivePedestrianSegmentStrokeStyle: "solid",
-
-                             routeActiveStrokeColor: "ba122b",
-
-                             pinActiveIconFillColor: "000000",
-
-                         });
 
      
 
@@ -639,6 +567,108 @@ jQuery(document).ready(function ($) {
      })();
 
      
+     (function() {
+
+         var $slider = $(".promo__slider");
+
+     
+
+         $slider.slick({
+
+             infinite: false,
+
+             slidesToShow: 1,
+
+             slidesToScroll: 1,
+
+             adaptiveHeight: false,
+
+             fade: true,
+
+             speed: 1000,
+
+             useCSS: false,
+
+             useTransform: false,
+
+             waitForAnimate: false,
+
+             arrows: false,
+
+             dots: true,
+
+             swipe: false
+
+             // responsive: [{
+
+             //     breakpoint: 769,
+
+             //     settings: {
+
+             //         slidesToShow: 2,
+
+             //         slidesToScroll: 1,
+
+             //     }
+
+             // }]
+
+         });
+
+     
+
+         var slides = $(".promo__slide");
+
+         
+
+         $slider
+
+             .on("beforeChange", function(event, slick, currentSlide, nextSlide) {
+
+                 slides.find(".promo__content").removeClass("fadeOutUp fadeOutDown fadeInDown fadeInUp");
+
+                 slides.find(".promo__image").removeClass("fadeOutUp fadeOutDown fadeInDown fadeInUp");
+
+                 slides
+
+                     .eq(currentSlide)
+
+                     .find(".promo__content")
+
+                     .addClass("fadeOutUp");
+
+                 slides
+
+                     .eq(currentSlide)
+
+                     .find(".promo__image")
+
+                     .addClass("fadeOutDown");
+
+     
+
+                 slides
+
+                     .eq(nextSlide)
+
+                     .find(".promo__content")
+
+                     .addClass("fadeInDown");
+
+                 slides
+
+                     .eq(nextSlide)
+
+                     .find(".promo__image")
+
+                     .addClass("fadeInUp");
+
+             })
+
+             .on("afterChange", function(event, slick, nextSlide) {});
+
+     })();
+
      
 
      

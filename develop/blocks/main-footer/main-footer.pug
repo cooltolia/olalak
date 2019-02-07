@@ -1,4 +1,10 @@
 mixin main-footer()
     +b.FOOTER.main-footer()
-        +inner
-            
+        +e.content
+            +e.logo
+                img(src="", alt="") 
+            +e.info
+                +e.A.info-text.--upper(href='mailto:sales@b2m.group') sales@b2m.group
+                +e.SPAN.info-text.--upper Директор по работе с клиентами
+                +e.SPAN.info-text Дарья Коронель - <a href='tel:+79164095045'>8 9164095045</a>
+                +e.A.info-text(href='mailto:dariakoronel@gmail.com') dariakoronel@gmail.com

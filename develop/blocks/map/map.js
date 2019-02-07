@@ -7,26 +7,6 @@ $(window).on('load', function() {
 
     var address;
     address = [55.775450, 37.631004];
-    var $map = $('#map');
-    var $mapFallback = $('.map__fallback');
-
-    /** popup */
-
-    var $header = $('.map__info-header'),
-        $body = $('.map__info-body');
-
-    if ($(window).width() <= '767') {
-        $header.on('click', function () {
-
-            if ($header.hasClass('js-expanded')) {
-                $body.slideUp();
-                $header.removeClass('js-expanded');
-            } else {
-                $header.addClass('js-expanded');
-                $body.slideDown();
-            }
-        })
-    }
 
     //Переменная для определения была ли хоть раз загружена Яндекс.Карта (чтобы избежать повторной загрузки)
     var check_if_load = false;
@@ -42,29 +22,13 @@ $(window).on('load', function() {
             ymaps.geocode(address).then(function (res) {
                 myMap = new ymaps.Map('map', {
                     center: res.geoObjects.get(0).geometry.getCoordinates(),
-                    zoom: zoom
+                    zoom: zoom,
+                    controls: []
                 });
 
                 var pointA = [55.77295318071541, 37.63288889128495],
                     pointB = address;
 
-                multiRoute = new ymaps.multiRouter.MultiRoute({
-                    referencePoints: [
-                        pointA,
-                        pointB
-                    ],
-                    params: {
-                        //Тип маршрутизации - пешеходная маршрутизация.
-                        routingMode: 'pedestrian',
-                    },
-                }, {
-                        // Автоматически устанавливать границы карты так, чтобы маршрут был виден целиком.
-                        //boundsAutoApply: true
-                        wayPointIconLayout: "none",
-                        routeActivePedestrianSegmentStrokeStyle: "solid",
-                        routeActiveStrokeColor: "ba122b",
-                        pinActiveIconFillColor: "000000",
-                    });
 
                 var myPlacemark = new ymaps.Placemark(myMap.getCenter(), {
                     hintContent: 'ул. Гиляровского,',

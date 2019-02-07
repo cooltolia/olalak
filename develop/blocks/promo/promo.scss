@@ -1,8 +1,63 @@
 .promo {
-    padding-bottom: 170px;
-
     color: $darktext;
     font-family: $gotham;
+}
+
+.promo__slider {
+    .slick-list {
+        box-sizing: content-box;
+        padding-top: 90px;
+        padding-bottom: 110px;
+        height: 800px;
+    }
+
+    .slick-dots {
+        padding: 0;
+        margin: 0;
+        list-style: none;
+
+        position: absolute;
+        display: block;
+        top: 50%;
+        transform: translateY(-50%);
+        right: -60px;
+
+        li {
+            padding: 8px;  
+            
+            cursor: pointer;
+
+            &.slick-active {
+                button {
+                    background-color: #f5a623;
+                }
+            }
+        }
+
+        button {
+            display: block;
+            width: 12px;
+            height: 11px;
+
+            background-color: rgba(#fff, 0.3);
+            border-radius: 50%;
+
+            transition: background 300ms ease;
+
+            border: none;
+            padding: 0;
+            font-size: 0;
+            outline: none;
+        }
+    }
+}
+
+.promo__slide {
+    outline: none;
+
+    position: absolute;
+    left: 0;
+    top: 0;
 }
 
 .promo__slide-inner {
@@ -10,6 +65,7 @@
 }
 
 .promo__content {
+    position: relative;
     flex: 1 1 auto;
     width: 47%;
     height: 740px;
@@ -28,10 +84,31 @@
     text-transform: uppercase;
 }
 
+.promo__text-wrapper {
+    position: relative;
+
+    &::before {
+        content: "";
+        position: absolute;
+        z-index: 1;
+        width: 100%;
+        height: 100%;
+        bottom: -2px;
+
+        pointer-events: none;
+
+        background-image: linear-gradient(to bottom, transparent 70%, #fff 100%);
+    }
+}
+
 .promo__text {
+    position: relative;
     margin: 0;
     margin-bottom: 10px;
     max-height: 440px;
+    padding-right: 7000px;
+    margin-right: -7000px;
+    padding-bottom: 90px;
 
     overflow-y: auto;
 
@@ -40,7 +117,7 @@
     color: $darkgreytext;
 
     b {
-        font-weight: 700;   
+        font-weight: 700;
     }
 }
 
