@@ -49,3 +49,11 @@
         text-decoration: none;
     }
 }
+
+@media (max-width: 1280px) {
+    .main-nav__item {
+        &:first-child {
+            margin-right: 50px;
+        }
+    }
+}

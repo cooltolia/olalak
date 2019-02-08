@@ -4,6 +4,10 @@
 }
 
 .promo__slider {
+    .animated {
+        animation-duration: 1500ms;
+    }
+
     .slick-list {
         box-sizing: content-box;
         padding-top: 90px;
@@ -106,8 +110,8 @@
     margin: 0;
     margin-bottom: 10px;
     max-height: 440px;
-    padding-right: 7000px;
-    margin-right: -7000px;
+    padding-right: 9999px;
+    margin-right: -9999px;
     padding-bottom: 90px;
 
     overflow-y: auto;
@@ -129,8 +133,9 @@
     top: 45px;
 
     img {
+        @include img;
         position: absolute;
-        width: 100%;
-        height: 100%;
+        // width: 100%;
+        // height: 100%;
     }
 }

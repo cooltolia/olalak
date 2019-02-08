@@ -3,6 +3,40 @@ $.noConflict();
 jQuery(document).ready(function ($) {
     $("body").removeClass("pageload");
 
+     (function() {
+
+         $(".advantages__list").slick({
+
+             mobileFirst: true,
+
+             slidesToShow: 1,
+
+             slidesToScroll: 1,
+
+             infinite: true,
+
+             arrows: false,
+
+             dots: true,
+
+             adaptiveHeight: true,
+
+             responsive: [
+
+                 {
+
+                     breakpoint: 481,
+
+                     settings: "unslick"
+
+                 }
+
+             ]
+
+         });
+
+     })();
+
      
 
      
@@ -585,7 +619,7 @@ jQuery(document).ready(function ($) {
 
              fade: true,
 
-             speed: 1000,
+             speed: 1500,
 
              useCSS: false,
 
@@ -596,6 +630,8 @@ jQuery(document).ready(function ($) {
              arrows: false,
 
              dots: true,
+
+             lazyLoad: "ondemand",
 
              // swipe: false
 
@@ -619,53 +655,49 @@ jQuery(document).ready(function ($) {
 
          var slides = $(".promo__slide");
 
-         
+     
 
-         $slider
+         $slider.on("beforeChange", function(event, slick, currentSlide, nextSlide) {
 
-             .on("beforeChange", function(event, slick, currentSlide, nextSlide) {
+             slides.find(".promo__content").removeClass("fadeOutUp fadeOutDown fadeInDown fadeInUp");
 
-                 slides.find(".promo__content").removeClass("fadeOutUp fadeOutDown fadeInDown fadeInUp");
+             slides.find(".promo__image").removeClass("fadeOutUp fadeOutDown fadeInDown fadeInUp");
 
-                 slides.find(".promo__image").removeClass("fadeOutUp fadeOutDown fadeInDown fadeInUp");
+             slides
 
-                 slides
+                 .eq(currentSlide)
 
-                     .eq(currentSlide)
+                 .find(".promo__content")
 
-                     .find(".promo__content")
+                 .addClass("fadeOutUp");
 
-                     .addClass("fadeOutUp");
+             slides
 
-                 slides
+                 .eq(currentSlide)
 
-                     .eq(currentSlide)
+                 .find(".promo__image")
 
-                     .find(".promo__image")
-
-                     .addClass("fadeOutDown");
+                 .addClass("fadeOutDown");
 
      
 
-                 slides
+             slides
 
-                     .eq(nextSlide)
+                 .eq(nextSlide)
 
-                     .find(".promo__content")
+                 .find(".promo__content")
 
-                     .addClass("fadeInDown");
+                 .addClass("fadeInDown");
 
-                 slides
+             slides
 
-                     .eq(nextSlide)
+                 .eq(nextSlide)
 
-                     .find(".promo__image")
+                 .find(".promo__image")
 
-                     .addClass("fadeInUp");
+                 .addClass("fadeInUp");
 
-             })
-
-             .on("afterChange", function(event, slick, nextSlide) {});
+         });
 
      })();
 
@@ -741,7 +773,11 @@ jQuery(document).ready(function ($) {
 
              arrows: false,
 
-             dots: true
+             dots: true,
+
+             speed: 500,
+
+             lazyLoad: "ondemand",
 
              // responsive: [{
 

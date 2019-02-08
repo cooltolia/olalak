@@ -6,7 +6,9 @@
         adaptiveHeight: false,
         fade: true,
         arrows: false,
-        dots: true
+        dots: true,
+        speed: 500,
+        lazyLoad: "ondemand",
         // responsive: [{
         //     breakpoint: 769,
         //     settings: {
