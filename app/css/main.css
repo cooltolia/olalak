@@ -744,6 +744,7 @@ th {
 
 .map__inner {
   height: 745px;
+  max-width: 1920px;
   margin: 0 auto; }
 
 .map__data {
@@ -1267,6 +1268,40 @@ body.modal-open {
 .testimonials__slider .slick-list {
   padding: 0 2px; }
 
+.testimonials__slider .slick-dots {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  position: absolute;
+  display: block;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+     -moz-transform: translateY(-50%);
+      -ms-transform: translateY(-50%);
+          transform: translateY(-50%);
+  right: -110px; }
+  .testimonials__slider .slick-dots li {
+    padding: 8px;
+    cursor: pointer; }
+    .testimonials__slider .slick-dots li.slick-active button {
+      background-color: #f5a623; }
+  .testimonials__slider .slick-dots button {
+    display: block;
+    width: 12px;
+    height: 11px;
+    background-color: rgba(255, 255, 255, 0.3);
+    border-radius: 50%;
+    -webkit-transition: background 300ms ease;
+    -moz-transition: background 300ms ease;
+    transition: background 300ms ease;
+    border: none;
+    padding: 0;
+    font-size: 0;
+    outline: none; }
+
+.testimonials__slide {
+  outline: none; }
+
 .testimonials__slide-inner {
   margin-right: -1px;
   position: relative;
@@ -1413,6 +1448,36 @@ body.modal-open {
 
 .works__slider {
   width: 100%; }
+  .works__slider .slick-dots {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    position: absolute;
+    display: block;
+    top: 50%;
+    -webkit-transform: translateY(-50%);
+       -moz-transform: translateY(-50%);
+        -ms-transform: translateY(-50%);
+            transform: translateY(-50%);
+    right: -100px; }
+    .works__slider .slick-dots li {
+      padding: 8px;
+      cursor: pointer; }
+      .works__slider .slick-dots li.slick-active button {
+        background-color: #f5a623; }
+    .works__slider .slick-dots button {
+      display: block;
+      width: 12px;
+      height: 11px;
+      background-color: rgba(255, 255, 255, 0.3);
+      border-radius: 50%;
+      -webkit-transition: background 300ms ease;
+      -moz-transition: background 300ms ease;
+      transition: background 300ms ease;
+      border: none;
+      padding: 0;
+      font-size: 0;
+      outline: none; }
 
 .works__images {
   display: -webkit-box;

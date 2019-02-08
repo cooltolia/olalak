@@ -597,7 +597,7 @@ jQuery(document).ready(function ($) {
 
              dots: true,
 
-             swipe: false
+             // swipe: false
 
              // responsive: [{
 
@@ -694,6 +694,10 @@ jQuery(document).ready(function ($) {
 
              adaptiveHeight: false,
 
+             arrows: false,
+
+             dots: true
+
              // responsive: [{
 
              //     breakpoint: 769,
@@ -721,6 +725,42 @@ jQuery(document).ready(function ($) {
      
 
      
+     (function() {
+
+         $(".works__slider").slick({
+
+             infinite: true,
+
+             slidesToShow: 1,
+
+             slidesToScroll: 1,
+
+             adaptiveHeight: false,
+
+             fade: true,
+
+             arrows: false,
+
+             dots: true
+
+             // responsive: [{
+
+             //     breakpoint: 769,
+
+             //     settings: {
+
+             //         slidesToShow: 2,
+
+             //         slidesToScroll: 1,
+
+             //     }
+
+             // }]
+
+         });
+
+     })();
+
      
     
     // (function () {

@@ -13,7 +13,7 @@
         waitForAnimate: false,
         arrows: false,
         dots: true,
-        swipe: false
+        // swipe: false
         // responsive: [{
         //     breakpoint: 769,
         //     settings: {
