@@ -2,7 +2,7 @@
     padding-top: 100px;
     padding-bottom: 90px;
 
-    background-image: url('../images/interior/bg.jpg');
+    background-image: url("../images/interior/bg.jpg");
     background-size: cover;
     background-position: center;
 
@@ -21,12 +21,166 @@
 
 .interior__slider {
     margin: 0 -8px;
+
+    .slick-dots {
+        padding: 0;
+        margin: 0;
+        list-style: none;
+
+        position: absolute;
+        display: block;
+        top: 50%;
+        transform: translateY(-50%);
+        right: -60px;
+
+        li {
+            padding: 8px;
+
+            cursor: pointer;
+
+            &.slick-active {
+                button {
+                    background-color: #f5a623;
+                }
+            }
+        }
+
+        button {
+            display: block;
+            width: 12px;
+            height: 11px;
+
+            background-color: rgba(#fff, 0.3);
+            border-radius: 50%;
+
+            transition: background 300ms ease;
+
+            border: none;
+            padding: 0;
+            font-size: 0;
+            outline: none;
+        }
+    }
+
+    .custom-dots {
+        padding: 0;
+        margin: 0;
+        list-style: none;
+
+        position: absolute;
+        display: flex;
+        align-items: flex-end;
+        top: -70px;
+        right: 20px;
+
+        li {
+            padding: 8px;
+
+            cursor: pointer;
+
+            &.slick-active {
+                button {
+                    height: 7px;
+                    background-color: $themecolor;
+                }
+            }
+
+            &.slick-active + li {
+                button {
+                    background-color: rgba($themecolor, 0.6);
+                }
+            }
+        }
+
+        button {
+            display: block;
+            width: 43px;
+            height: 4px;
+
+            background-color: rgba($themecolor, 0.33);
+
+            transition: background 300ms ease, height 300ms ease;
+
+            border: none;
+            padding: 0;
+            font-size: 0;
+            outline: none;
+        }
+    }
 }
 
 .interior__image {
     padding: 0 4px;
 
     img {
-        @include img
+        @include img;
+    }
+}
+
+@media (max-width: 1280px) {
+    .interior__slider {
+        .slick-dots {
+            right: -40px;
+        }
+    }
+}
+
+@media (max-width: 1024px) {
+    .interior {
+        padding-top: 60px;
+        padding-bottom: 40px;
+    }
+
+    .interior__title {
+        margin-bottom: 40px;
+
+        font-size: 40px;
+    }
+}
+
+@media (max-width: 768px) {
+    .interior {
+        padding-bottom: 80px;
+    }
+
+    .interior__title {
+        text-align: center;
+    }
+
+    .interior__slider {
+        .slick-dots {
+            right: 0;
+            width: 100%;
+            top: auto;
+            bottom: -40px;
+            transform: none;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            
+        }
+
+        .custom-dots {
+            display: none;
+        }
+    }
+}
+
+@media (max-width: 480px) {
+    .interior {
+        padding-top: 30px;
+        padding-bottom: 50px;
+    }
+
+    .interior__slider {
+        .slick-dots {
+            bottom: -35px;
+        }
+    }
+
+    .interior__title {
+        font-size: 28px;
+
+        margin-bottom: 25px;
     }
 }

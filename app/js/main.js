@@ -43,13 +43,83 @@ jQuery(document).ready(function ($) {
      
 
      
-     ;
+     (function() {
 
-     (function () {
+         $slider = $(".interior__slider");
+
+         var $customDotsItem;
+
+         $slider.on("init", function() {
+
+             var $dots = $slider.find(".slick-dots");
+
+             var $dotsItem = $dots.find("li");
 
      
 
-         $('.interior__slider').slick({
+             var $customDots = $dots.clone();
+
+             $customDots.addClass("custom-dots").removeClass("slick-dots");
+
+     
+
+             $slider.append($customDots);
+
+     
+
+             $customDotsItem = $customDots.find("li");
+
+             $customDotsItem.each(function(index) {
+
+                 $(this).on("click", function() {
+
+                     var slickIndex = index;
+
+                     $customDotsItem.removeClass("slick-active");
+
+                     $(this).addClass("slick-active");
+
+     
+
+                     $dotsItem.eq(slickIndex).click();
+
+                 });
+
+             });
+
+             $dotsItem.each(function(index) {
+
+                 $(this).on("click", function() {
+
+                     var slickIndex = index;
+
+                     $customDotsItem.removeClass("slick-active");
+
+                     $customDotsItem.eq(slickIndex).addClass("slick-active");
+
+                 });
+
+             });
+
+         });
+
+     
+
+         $slider.on("afterChange", function(event, slick, current, next) {
+
+             var index = slick.$dots.find(".slick-active").index();
+
+             $customDotsItem.removeClass("slick-active");
+
+             
+
+             $customDotsItem.eq(index).addClass("slick-active");
+
+         });
+
+     
+
+         $slider.slick({
 
              infinite: true,
 
@@ -59,25 +129,31 @@ jQuery(document).ready(function ($) {
 
              adaptiveHeight: false,
 
-             // responsive: [{
+             arrows: false,
 
-             //     breakpoint: 769,
+             dots: true,
 
-             //     settings: {
+             speed: 1000,
 
-             //         slidesToShow: 2,
+             responsive: [{
 
-             //         slidesToScroll: 1,
+                 breakpoint: 769,
 
-             //     }
+                 settings: {
 
-             // }]
+                     slidesToShow: 2,
+
+                     slidesToScroll: 2,
+
+                 }
+
+             }]
 
          });
 
-     
-
      })();
+
+     
 
      
      
@@ -710,45 +786,55 @@ jQuery(document).ready(function ($) {
      
 
      
-     ;
+     (function() {
 
-     (function () {
-
-     
-
-         $('.testimonials__slider').slick({
+         $(".testimonials__slider").slick({
 
              infinite: true,
 
              slidesToShow: 3,
 
-             slidesToScroll: 3,
+             slidesToScroll: 1,
 
-             adaptiveHeight: false,
+             adaptiveHeight: true,
 
              arrows: false,
 
-             dots: true
+             dots: true,
 
-             // responsive: [{
+             responsive: [
 
-             //     breakpoint: 769,
+                 {
 
-             //     settings: {
+                     breakpoint: 769,
 
-             //         slidesToShow: 2,
+                     settings: {
 
-             //         slidesToScroll: 1,
+                         slidesToShow: 2,
 
-             //     }
+                     }
 
-             // }]
+                 },
+
+                 {
+
+                     breakpoint: 481,
+
+                     settings: {
+
+                         slidesToShow: 1
+
+                     }
+
+                 }
+
+             ]
 
          });
 
-     
-
      })();
+
+     
 
      
      
@@ -775,25 +861,39 @@ jQuery(document).ready(function ($) {
 
              dots: true,
 
-             speed: 500,
+             speed: 1000,
 
              lazyLoad: "ondemand",
 
-             // responsive: [{
+             responsive: [{
 
-             //     breakpoint: 769,
+                 breakpoint: 479,
 
-             //     settings: {
+                 settings: 'unslick'
 
-             //         slidesToShow: 2,
-
-             //         slidesToScroll: 1,
-
-             //     }
-
-             // }]
+             }]
 
          });
+
+     
+
+         var $images = $('.works__images')
+
+         
+
+         // matchMedia('min-width(481px)')
+
+         // function() {
+
+         //     $images.on('click', function(e) {
+
+         //         e.preventDefault();
+
+         //     })
+
+         // }
+
+     
 
      })();
 
