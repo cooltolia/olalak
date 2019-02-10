@@ -81,3 +81,20 @@
         transform: none;
     }
 }
+
+@media (max-width: 480px) {
+    .socials {
+        justify-content: flex-end;
+    }
+
+    .socials__title {
+        display: none;
+    }
+
+    .socials__item {
+        margin-right: 15px;
+        
+        width: 19px;
+        height: 18px;
+    }
+}

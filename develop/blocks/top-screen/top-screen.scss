@@ -55,7 +55,8 @@
     z-index: 1;
 
     img {
-        @include img
+        @include img;
+        width: auto;
     }
 }
 
@@ -139,7 +140,7 @@
 
     .top-screen__title {
         right: 55px;
-        
+
         font-size: 40px;
         text-align: right;
     }
@@ -163,15 +164,17 @@
     }
 
     .top-screen__image {
+        position: relative;
+        left: -15%;
         width: 100%;
     }
 
     .top-screen__title {
-        width: 100%;
+        width: auto;
         right: 0;
-        left: 0;
-        text-align: center;
-        top: 150px;
+        left: 10%;
+        text-align: left;
+        top: 60%;
 
         text-shadow: 0 1px 2px #fff;
     }
@@ -181,9 +184,9 @@
     }
 
     .top-screen__socials {
-        top: 115px;
-        right: 0;
-        left: 0;
+        top: 70px;
+        right: 15px;
+        left: auto;
         transform: none;
         max-width: 380px;
         margin: 0 auto;
