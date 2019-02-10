@@ -5,35 +5,33 @@ jQuery(document).ready(function ($) {
 
      (function() {
 
-         $(".advantages__list").slick({
+         var $slider = $(".advantages__list");
 
-             mobileFirst: true,
+     
 
-             slidesToShow: 1,
+         if (window.matchMedia("(max-width: 480px)").matches) {
 
-             slidesToScroll: 1,
+             $slider.slick({
 
-             infinite: true,
+                 slidesToShow: 1,
 
-             arrows: false,
+                 slidesToScroll: 1,
 
-             dots: true,
+                 arrows: false,
 
-             adaptiveHeight: true,
+                 dots: true,
 
-             responsive: [
+                 adaptiveHeight: true,
 
-                 {
+             });
 
-                     breakpoint: 481,
+         } else {
 
-                     settings: "unslick"
+             return
 
-                 }
+         }
 
-             ]
-
-         });
+     
 
      })();
 
@@ -49,11 +47,15 @@ jQuery(document).ready(function ($) {
 
          var $customDotsItem;
 
-         $slider.on("init", function() {
+         $slider.on("init", function(event, slick) {
 
              var $dots = $slider.find(".slick-dots");
 
              var $dotsItem = $dots.find("li");
+
+     
+
+             console.log(slick);
 
      
 
@@ -111,7 +113,7 @@ jQuery(document).ready(function ($) {
 
              $customDotsItem.removeClass("slick-active");
 
-             
+     
 
              $customDotsItem.eq(index).addClass("slick-active");
 
@@ -135,21 +137,37 @@ jQuery(document).ready(function ($) {
 
              speed: 1000,
 
-             responsive: [{
+             responsive: [
 
-                 breakpoint: 769,
+                 {
 
-                 settings: {
+                     breakpoint: 769,
 
-                     slidesToShow: 2,
+                     settings: {
 
-                     slidesToScroll: 2,
+                         slidesToShow: 2,
+
+                         slidesToScroll: 2
+
+                     }
 
                  }
 
-             }]
+             ]
 
          });
+
+     
+
+         // hack to make slick responsive object fire
+
+         setTimeout(function() {
+
+             $(window).resize();
+
+         }, 300);
+
+     
 
      })();
 
@@ -161,7 +179,7 @@ jQuery(document).ready(function ($) {
      
      ;(function() {
 
-         $('.top-form__input[name="phone"]').inputmask();
+         $('.main-form__input[name="phone"]').inputmask();
 
      })()
 
@@ -574,107 +592,59 @@ jQuery(document).ready(function ($) {
      })();
 
      
-     ;(function() {
+     (function() {
 
-         
+         var $slider = $(".prices__slider");
 
-         if (window.matchMedia("(max-width: 768px)").matches) {
-
-             var $mainTable = $('.prices__table-data');
+         var $slides = $(".prices__slide");
 
      
 
-             $mainTable.each(function () {
+         $slider.slick({
 
-                 var $header = $(this).find('.prices__table-header');
+             infinite: true,
 
-                 var $body = $(this).find('.prices__table-body');
+             slidesToShow: 1,
 
-                 var $firstHeaderCell = $header.find('th:first-child');
+             slidesToScroll: 1,
 
-                 var $firstbodyCell = $body.find('.prices__table-cell:first-child');
+             adaptiveHeight: false,
 
-     
+             fade: true,
 
-                 $body.on('scroll', function (e) {
+             speed: 1000,
 
-                     var scrollTop = $body.scrollTop();
+             arrows: false,
 
-     
+             dots: true,
 
-                     if (scrollTop > 0) {
+             lazyLoad: "ondemand"
 
-                         $body.css('margin-top', '0')
-
-                     } else {
-
-                         $body.css('margin-top', '-2px');
-
-                     }
+         });
 
      
 
-                     var scrollLeft = $body.scrollLeft();
+         $slider.on("beforeChange", function(event, slick, currentSlide, nextSlide) {
 
-     
+             $slides.removeClass("fadeOutUp fadeOutDown fadeInDown fadeInUp");
 
-                     if (scrollLeft > 0) {
+             $slides
 
-                         $header.css("transform", "translateX(" + (-scrollLeft) + "px)");
+                 .eq(currentSlide)
 
-                         $firstbodyCell.css("transform", "translateX(" + (scrollLeft) + "px)");
+                 .addClass("fadeOutUp");
 
-                         $firstHeaderCell.css("transform", "translateX(" + (scrollLeft) + "px)");
+             $slides
 
-                     } else {
+                 .eq(nextSlide)
 
-                         $header.css("transform", "translateX(0)");
+                 .addClass("fadeInDown");
 
-                         $firstbodyCell.css("transform", "translateX(0)");
-
-                         $firstHeaderCell.css("transform", "translateX(0)");
-
-                     }
-
-     
-
-                 });
-
-             })
-
-         }
-
-     
-
-         var $innerTable = $('.prices__inner-table');
-
-     
-
-         $innerTable.each(function () {
-
-             var _this = $(this);
-
-     
-
-             var parentCell = _this.parent();
-
-             var parentCellHeight = parentCell.outerHeight();
-
-             var innerCells = _this.find('td');
-
-     
-
-             innerCells.each(function () {
-
-                 $(this).css('height', parentCellHeight / innerCells.length)
-
-             })
-
-         })
-
-         
+         });
 
      })();
+
+     
 
      
      (function() {
@@ -867,7 +837,7 @@ jQuery(document).ready(function ($) {
 
              responsive: [{
 
-                 breakpoint: 479,
+                 breakpoint: 481,
 
                  settings: 'unslick'
 
@@ -892,6 +862,24 @@ jQuery(document).ready(function ($) {
          //     })
 
          // }
+
+     
+
+         $(".works__more").click(function (e) {
+
+             e.preventDefault();
+
+             
+
+             // continue watching from 4th image
+
+             var fancygroup = $("a[rel='works']");
+
+             var fancyelem = $(fancygroup.get(3));
+
+             fancyelem.click();
+
+         });
 
      
 

@@ -1,9 +1,11 @@
 (function() {
     $slider = $(".interior__slider");
     var $customDotsItem;
-    $slider.on("init", function() {
+    $slider.on("init", function(event, slick) {
         var $dots = $slider.find(".slick-dots");
         var $dotsItem = $dots.find("li");
+
+        console.log(slick);
 
         var $customDots = $dots.clone();
         $customDots.addClass("custom-dots").removeClass("slick-dots");
@@ -32,7 +34,7 @@
     $slider.on("afterChange", function(event, slick, current, next) {
         var index = slick.$dots.find(".slick-active").index();
         $customDotsItem.removeClass("slick-active");
-        
+
         $customDotsItem.eq(index).addClass("slick-active");
     });
 
@@ -44,12 +46,20 @@
         arrows: false,
         dots: true,
         speed: 1000,
-        responsive: [{
-            breakpoint: 769,
-            settings: {
-                slidesToShow: 2,
-                slidesToScroll: 2,
+        responsive: [
+            {
+                breakpoint: 769,
+                settings: {
+                    slidesToShow: 2,
+                    slidesToScroll: 2
+                }
             }
-        }]
+        ]
     });
+
+    // hack to make slick responsive object fire
+    setTimeout(function() {
+        $(window).resize();
+    }, 300);
+
 })();

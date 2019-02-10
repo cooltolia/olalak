@@ -71,7 +71,7 @@
         background-color: #fff;
         color: #f5a623;
         text-decoration: none;
-        
+
         &::after {
             border-color: #f5a623;
         }
@@ -79,5 +79,71 @@
 
     &:last-child {
         margin-bottom: 0;
+    }
+}
+
+@media (max-width: 1024px) {
+    .map__inner {
+        height: 500px;
+    }
+
+    .map__data {
+        width: 288px;
+        top: 18px;
+        left: 18px;
+    }
+
+    .map__logo {
+        height: 242px;
+    }
+
+    .map__addresses {
+        padding: 20px 10px;
+    }
+
+    .map__address {
+        padding: 10px 48px 10px 15px;
+        margin-bottom: 10px;
+    }
+}
+
+@media (max-width: 768px) {
+    .map__data {
+        width: 205px;
+        top: 10px;
+        left: 10px;
+    }
+
+    .map__address {
+        padding: 7px 38px 7px 5px;
+        margin-bottom: 5px;
+
+        &::after {
+            width: 8px;
+            height: 8px;
+            right: 26px;
+        }
+    }
+}
+
+@media (max-width: 480px) {
+    .map {
+        position: relative;
+        padding-top: 40px;
+    }
+
+    .map__inner {
+        height: 380px;
+    }
+
+    .map__logo {
+        display: none;
+    }
+
+    .map__data {
+        position: relative;
+        left: 0;
+        top: 0;
+        width: 100%;
     }
 }

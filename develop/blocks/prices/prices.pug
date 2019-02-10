@@ -5,10 +5,11 @@ mixin prices()
                 +e.heading
                     +e.title Cтоимость услуг
                 +e.slider
-                    +e.slide
-                        +e.table
-                            each row in prices
-                                +e.table-row
-                                    +e.service= row.service
-                                    +e.divider
-                                    +e.price= row.price
+                    each table in prices
+                        +e.slide.animated
+                            +e.table
+                                each row in table
+                                    +e.table-row
+                                        +e.service= row.service
+                                        +e.divider
+                                        +e.price= row.price

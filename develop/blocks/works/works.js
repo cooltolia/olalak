@@ -10,7 +10,7 @@
         speed: 1000,
         lazyLoad: "ondemand",
         responsive: [{
-            breakpoint: 479,
+            breakpoint: 481,
             settings: 'unslick'
         }]
     });
@@ -23,5 +23,14 @@
     //         e.preventDefault();
     //     })
     // }
+
+    $(".works__more").click(function (e) {
+        e.preventDefault();
+        
+        // continue watching from 4th image
+        var fancygroup = $("a[rel='works']");
+        var fancyelem = $(fancygroup.get(3));
+        fancyelem.click();
+    });
 
 })();

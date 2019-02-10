@@ -1,3 +1,3 @@
 ;(function() {
-    $('.top-form__input[name="phone"]').inputmask();
+    $('.main-form__input[name="phone"]').inputmask();
 })()
