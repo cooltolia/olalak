@@ -10,10 +10,9 @@
 
 .main-header__logo {
     position: relative;
-    width: 60px;
+    width: 111px;
     height: 111px;
-    margin-right: 170px;
-    background-color: #fff;
+    margin-right: 150px;
 
     img {
         @include svg-icon
@@ -69,7 +68,7 @@
     }
 
     .main-header__logo {
-        width: 50px;
+        width: 80px;
         height: 80px;
         margin-right: 0;
     }

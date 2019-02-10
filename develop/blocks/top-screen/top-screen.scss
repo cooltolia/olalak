@@ -47,13 +47,16 @@
 }
 
 .top-screen__logo {
-    width: 400px;
-    height: 380px;
+    width: 401px;
+    height: 381px;
     position: absolute;
     right: 0;
     bottom: -60%;
-    background-color: #fff;
     z-index: 1;
+
+    img {
+        @include img
+    }
 }
 
 .top-screen__socials {

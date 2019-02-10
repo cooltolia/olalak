@@ -27,6 +27,13 @@
     width: 100%;
     height: 386px;
     background-color: #fff;
+
+    img {
+        @include img;
+        position: absolute;
+        right: -40px;
+        bottom: -10px;
+    }
 }
 
 .map__addresses {
@@ -95,6 +102,11 @@
 
     .map__logo {
         height: 242px;
+
+        img {
+            right: -20px;
+            bottom: 0;
+        }
     }
 
     .map__addresses {
