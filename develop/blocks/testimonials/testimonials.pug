@@ -10,7 +10,7 @@ mixin testimonials()
                         +e.slide
                             +e.slide-inner.fadeInDown.wow(data-wow-delay=delay+"s")
                                 +e.slide-image
-                                    img(src='images/testimonials/slide' +   index + '.jpg')
+                                    img.lazy(data-src='images/testimonials/slide' +   index + '.jpg')
                                 +e.slide-content
                                     +e.slide-author= item.name
                                     +e.slide-text

@@ -5,8 +5,6 @@
         var $dots = $slider.find(".slick-dots");
         var $dotsItem = $dots.find("li");
 
-        console.log(slick);
-
         var $customDots = $dots.clone();
         $customDots.addClass("custom-dots").removeClass("slick-dots");
 
@@ -46,6 +44,7 @@
         arrows: false,
         dots: true,
         speed: 1000,
+        lazyLoad: "ondemand",
         responsive: [
             {
                 breakpoint: 769,

@@ -65,6 +65,52 @@
             outline: none;
         }
     }
+
+    .custom-dots {
+        padding: 0;
+        margin: 0;
+        list-style: none;
+
+        position: absolute;
+        display: flex;
+        align-items: flex-end;
+        top: -60px;
+        right: 20px;
+
+        li {
+            padding: 8px;
+
+            cursor: pointer;
+
+            &.slick-active {
+                button {
+                    height: 7px;
+                    background-color: $themecolor;
+                }
+            }
+
+            &.slick-active+li {
+                button {
+                    background-color: rgba($themecolor, 0.6);
+                }
+            }
+        }
+
+        button {
+            display: block;
+            width: 43px;
+            height: 4px;
+
+            background-color: rgba($themecolor, 0.33);
+
+            transition: background 300ms ease, height 300ms ease;
+
+            border: none;
+            padding: 0;
+            font-size: 0;
+            outline: none;
+        }
+    }
 }
 
 .works__slide {
@@ -149,12 +195,11 @@
 
     .works__title {
         position: relative;
-        left: 0;
+        left: 50px;
         top: 0;
         margin-bottom: 20px;
 
         font-size: 40px;
-        text-align: center;
     }
 
     .works__images {
@@ -179,6 +224,10 @@
     .works__slider {
         .slick-dots {
             right: -50px;
+        }
+
+        .custom-dots {
+            display: none;
         }
     }
 

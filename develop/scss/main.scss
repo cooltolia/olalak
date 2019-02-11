@@ -8,6 +8,10 @@ body {
     background-color: #f1f1f1;
 }
 
+.wow {
+    visibility: hidden;
+}
+
 .lazyload {
     position: relative;
     transition: opacity 300ms ease;

@@ -8,6 +8,18 @@ jQuery(document).ready(function ($) {
     });
     wow.init();
 
+    var myLazyLoad = new LazyLoad({
+        elements_selector: ".lazy",
+        threshold: 200,
+
+    });
+
+    var worksImages = new LazyLoad({
+        elements_selector: ".works-lazy",
+        threshold: 0,
+
+    });
+
      (function() {
 
          var $slider = $(".advantages__list");
@@ -57,10 +69,6 @@ jQuery(document).ready(function ($) {
              var $dots = $slider.find(".slick-dots");
 
              var $dotsItem = $dots.find("li");
-
-     
-
-             console.log(slick);
 
      
 
@@ -142,6 +150,8 @@ jQuery(document).ready(function ($) {
 
              speed: 1000,
 
+             lazyLoad: "ondemand",
+
              responsive: [
 
                  {
@@ -192,7 +202,51 @@ jQuery(document).ready(function ($) {
      
 
      
+     ;
+
+     (function () {
+
      
+
+         var link = $('.main-nav__link');
+
+     
+
+     
+
+         link.on('click', function (e) {
+
+     
+
+             var href = $(this).attr("href");
+
+     
+
+             if (href[0] !== '#') {
+
+                 return true
+
+             }
+
+     
+
+             e.preventDefault();
+
+             var target = $(this.hash);
+
+     
+
+             $('html, body').animate({
+
+                 scrollTop: target.offset().top
+
+             }, 1000);
+
+         });
+
+     
+
+     })();
 
      
      $(window).on('load', function() {
@@ -747,7 +801,81 @@ jQuery(document).ready(function ($) {
      
      (function() {
 
-         $(".testimonials__slider").slick({
+         var $slider = $(".testimonials__slider");
+
+         var $customDotsItem;
+
+         $slider.on("init", function (event, slick) {
+
+             var $dots = $slider.find(".slick-dots");
+
+             var $dotsItem = $dots.find("li");
+
+     
+
+             var $customDots = $dots.clone();
+
+             $customDots.addClass("custom-dots").removeClass("slick-dots");
+
+     
+
+             $slider.append($customDots);
+
+     
+
+             $customDotsItem = $customDots.find("li");
+
+             $customDotsItem.each(function (index) {
+
+                 $(this).on("click", function () {
+
+                     var slickIndex = index;
+
+                     $customDotsItem.removeClass("slick-active");
+
+                     $(this).addClass("slick-active");
+
+     
+
+                     $dotsItem.eq(slickIndex).click();
+
+                 });
+
+             });
+
+             $dotsItem.each(function (index) {
+
+                 $(this).on("click", function () {
+
+                     var slickIndex = index;
+
+                     $customDotsItem.removeClass("slick-active");
+
+                     $customDotsItem.eq(slickIndex).addClass("slick-active");
+
+                 });
+
+             });
+
+         });
+
+     
+
+         $slider.on("afterChange", function (event, slick, current, next) {
+
+             var index = slick.$dots.find(".slick-active").index();
+
+             $customDotsItem.removeClass("slick-active");
+
+     
+
+             $customDotsItem.eq(index).addClass("slick-active");
+
+         });
+
+     
+
+         $slider.slick({
 
              infinite: true,
 
@@ -771,6 +899,8 @@ jQuery(document).ready(function ($) {
 
                          slidesToShow: 2,
 
+                         slidesToScroll: 2,
+
                      }
 
                  },
@@ -781,7 +911,9 @@ jQuery(document).ready(function ($) {
 
                      settings: {
 
-                         slidesToShow: 1
+                         slidesToShow: 1,
+
+                         slidesToScroll: 1
 
                      }
 
@@ -804,7 +936,83 @@ jQuery(document).ready(function ($) {
      
      (function() {
 
-         $(".works__slider").slick({
+         $slider = $(".works__slider");
+
+         var $customDotsItem;
+
+     
+
+         $slider.on("init", function (event, slick) {
+
+             var $dots = $slider.find(".slick-dots");
+
+             var $dotsItem = $dots.find("li");
+
+     
+
+             var $customDots = $dots.clone();
+
+             $customDots.addClass("custom-dots").removeClass("slick-dots");
+
+     
+
+             $slider.append($customDots);
+
+     
+
+             $customDotsItem = $customDots.find("li");
+
+             $customDotsItem.each(function (index) {
+
+                 $(this).on("click", function () {
+
+                     var slickIndex = index;
+
+                     $customDotsItem.removeClass("slick-active");
+
+                     $(this).addClass("slick-active");
+
+     
+
+                     $dotsItem.eq(slickIndex).click();
+
+                 });
+
+             });
+
+             $dotsItem.each(function (index) {
+
+                 $(this).on("click", function () {
+
+                     var slickIndex = index;
+
+                     $customDotsItem.removeClass("slick-active");
+
+                     $customDotsItem.eq(slickIndex).addClass("slick-active");
+
+                 });
+
+             });
+
+         });
+
+     
+
+         $slider.on("afterChange", function (event, slick, current, next) {
+
+             var index = slick.$dots.find(".slick-active").index();
+
+             $customDotsItem.removeClass("slick-active");
+
+     
+
+             $customDotsItem.eq(index).addClass("slick-active");
+
+         });
+
+     
+
+         $slider.slick({
 
              infinite: true,
 
@@ -820,7 +1028,7 @@ jQuery(document).ready(function ($) {
 
              dots: true,
 
-             speed: 1000,
+             speed: 300,
 
              lazyLoad: "ondemand",
 
@@ -872,41 +1080,87 @@ jQuery(document).ready(function ($) {
 
      
 
+         var elem = ".works"
+
+     
+
+         function isScrolledIntoView(elem) {
+
+     
+
+             var node = $(elem);
+
+     
+
+             if (!node || node.length == 0) return;
+
+     
+
+             var docViewTop = $(window).scrollTop();
+
+     
+
+             var elemTop = node.offset().top;
+
+     
+
+             if (docViewTop + 300 > elemTop) {
+
+                 worksImages.loadAll();
+
+             };
+
+         }
+
+     
+
+         function debounce(func, wait, immediate) {
+
+             var timeout;
+
+             return function () {
+
+                 var context = this,
+
+                     args = arguments;
+
+                 var later = function () {
+
+                     timeout = null;
+
+                     if (!immediate) func.apply(context, args);
+
+                 };
+
+                 var callNow = immediate && !timeout;
+
+                 clearTimeout(timeout);
+
+                 timeout = setTimeout(later, wait);
+
+                 if (callNow) func.apply(context, args);
+
+             };
+
+         };
+
+     
+
+         var loadFirstImages = debounce(function () {
+
+             isScrolledIntoView(elem);
+
+         }, 250);
+
+     
+
+         $(document).on('scroll', loadFirstImages)
+
+     
+
      })();
 
      
     
-    // (function () {
-     /*    function logElementEvent(eventName, element) {
-            console.log(new Date().getTime(), eventName, element.getAttribute('data-src'));
-        }
-
-        function logEvent(eventName, elementsLeft) {
-            console.log(new Date().getTime(), eventName, elementsLeft + " images left");
-        } */
-
-        // function createImageFragment(srcUrl) {
-        //     var imageFragment = document.createElement('img');
-        //     imageFragment.setAttribute('src', srcUrl);
-        //     return imageFragment;
-        // }
-        /* ll = new LazyLoad({
-            threshold: 500,
-            elements_selector: ".lazyload",
-            callback_enter: function (element) {
-                function callback_load(event) {
-                    element.classList.add('loaded');
-                    element.classList.remove('loading');
-                    imageFragment.removeEventListener('load', callback_load);
-                }
-                var imageFragment = createImageFragment(element.getAttribute('data-src'));
-                imageFragment.addEventListener('load', callback_load);
-                element.classList.add('loading');              
-            },
-            callback_error: function (element) {
-                // logElementEvent("ERROR", element);
-                element.src = "https://placeholdit.imgix.net/~text?txtsize=21&txt=Fallback%20image&w=280&h=280";
-            }
-        }); */
-    // }());
+    
 });

@@ -8,7 +8,7 @@ mixin advantages()
                     -var delay = 0.2 * (index+1)
                     +e.LI.item.fadeInDown.wow(data-wow-delay=delay+"s")
                         +e.item-icon
-                            img(src="images/advantages/advantage" + index + ".svg" , alt="")
+                            img.lazy(data-src="images/advantages/advantage" + index + ".svg" , alt="")
                         +e.item-title= item.title
                         +e.P.item-text= item.text
             +e.form.fadeIn.wow(data-wow-delay="0.6s")
