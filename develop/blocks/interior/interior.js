@@ -50,7 +50,7 @@
                 breakpoint: 769,
                 settings: {
                     slidesToShow: 2,
-                    slidesToScroll: 2
+                    slidesToScroll: 2,
                 }
             }
         ]

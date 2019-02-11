@@ -84,7 +84,8 @@
         var elemTop = node.offset().top;
 
         if (docViewTop + 300 > elemTop) {
-            worksImages.loadAll();
+            console.log(worksImages);
+             worksImages.loadAll();
         };
     }
 

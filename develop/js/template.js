@@ -16,8 +16,7 @@ jQuery(document).ready(function ($) {
 
     var worksImages = new LazyLoad({
         elements_selector: ".works-lazy",
-        threshold: 0,
-
+        threshold: 50,
     });
 
      //=require ../blocks/**/*.js 

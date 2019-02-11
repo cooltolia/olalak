@@ -116,6 +116,11 @@
     .top-screen__title {
         right: 15%;
     }
+
+    .top-screen__logo {
+        right: 50px;
+        bottom: -75%;
+    }
 }
 
 @media (max-width: 768px) {
@@ -134,8 +139,8 @@
     .top-screen__logo {
         width: 210px;
         height: 260px;
-        right: 80px;
-        bottom: -65%;
+        right: 60px;
+        bottom: -110%;
     }
 
     .top-screen__title {
@@ -174,7 +179,7 @@
         right: 0;
         left: 10%;
         text-align: left;
-        top: 60%;
+        top: 55%;
 
         text-shadow: 0 1px 2px #fff;
     }

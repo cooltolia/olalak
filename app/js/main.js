@@ -16,8 +16,7 @@ jQuery(document).ready(function ($) {
 
     var worksImages = new LazyLoad({
         elements_selector: ".works-lazy",
-        threshold: 0,
-
+        threshold: 50,
     });
 
      (function() {
@@ -162,7 +161,7 @@ jQuery(document).ready(function ($) {
 
                          slidesToShow: 2,
 
-                         slidesToScroll: 2
+                         slidesToScroll: 2,
 
                      }
 
@@ -1106,7 +1105,9 @@ jQuery(document).ready(function ($) {
 
              if (docViewTop + 300 > elemTop) {
 
-                 worksImages.loadAll();
+                 console.log(worksImages);
+
+                  worksImages.loadAll();
 
              };
 
