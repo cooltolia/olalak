@@ -3,6 +3,11 @@ $.noConflict();
 jQuery(document).ready(function ($) {
     $("body").removeClass("pageload");
 
+    var wow = new WOW({
+        mobile: false
+    });
+    wow.init();
+
      //=require ../blocks/**/*.js 
     
     // (function () {

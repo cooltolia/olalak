@@ -1,10 +1,10 @@
 mixin prices()
     +b.SECTION.prices
         +inner
-            +e.content
+            +e.content.fadeInDown.wow(data-wow-delay="0.4s" data-wow-offset='300')
                 +e.heading
                     +e.title Cтоимость услуг
-                +e.slider
+                +e.slider.fadeInDown.wow(data-wow-delay="0.8s" data-wow-offset='300')
                     each table in prices
                         +e.slide.animated
                             +e.table

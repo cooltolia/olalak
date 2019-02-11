@@ -14,37 +14,29 @@
         arrows: false,
         dots: true,
         lazyLoad: "ondemand",
-        // swipe: false
-        // responsive: [{
-        //     breakpoint: 769,
-        //     settings: {
-        //         slidesToShow: 2,
-        //         slidesToScroll: 1,
-        //     }
-        // }]
     });
 
     var slides = $(".promo__slide");
 
     $slider.on("beforeChange", function(event, slick, currentSlide, nextSlide) {
-        slides.find(".promo__content").removeClass("fadeOutUp fadeOutDown fadeInDown fadeInUp");
-        slides.find(".promo__image").removeClass("fadeOutUp fadeOutDown fadeInDown fadeInUp");
+        slides.find(".promo__content").removeClass("fadeOutUp fadeOutDown fadeInDown fadeInUp wow").removeAttr("style data-wow-delay data-wow-offset");
+        slides.find(".promo__image").removeClass("fadeOutUp fadeOutDown fadeInDown fadeInUp wow").removeAttr("style data-wow-delay data-wow-offset");
         slides
             .eq(currentSlide)
             .find(".promo__content")
-            .addClass("fadeOutUp");
+            .addClass("fadeOutUp animated");
         slides
             .eq(currentSlide)
             .find(".promo__image")
-            .addClass("fadeOutDown");
+            .addClass("fadeOutDown animated");
 
         slides
             .eq(nextSlide)
             .find(".promo__content")
-            .addClass("fadeInDown");
+            .addClass("fadeInDown animated");
         slides
             .eq(nextSlide)
             .find(".promo__image")
-            .addClass("fadeInUp");
+            .addClass("fadeInUp animated");
     });
 })();

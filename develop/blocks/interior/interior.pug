@@ -1,19 +1,20 @@
 mixin interior()
     +b.SECTION.interior
         +inner
-            +e.H2.title Интерьер
+            +e.H2.title.fadeInDown.wow(data-wow-delay="0.4s")
+                | Интерьер
             +e.slider
                 +e.slide
-                    +e.image
+                    +e.image.fadeInDown.wow(data-wow-delay="0.8s")
                         img(src="images/interior/interior0.jpg", alt="")
                 +e.slide
-                    +e.image
+                    +e.image.fadeInDown.wow(data-wow-delay="1.2s")
                         img(src="images/interior/interior1.jpg", alt="")
                 +e.slide
-                    +e.image
+                    +e.image.fadeInDown.wow(data-wow-delay="1.6s")
                         img(src="images/interior/interior2.jpg", alt="")
                 +e.slide
-                    +e.image
+                    +e.image.fadeInDown.wow(data-wow-delay="2s")
                         img(src="images/interior/interior3.jpg", alt="")
                 +e.slide
                     +e.image

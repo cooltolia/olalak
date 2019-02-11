@@ -412,8 +412,7 @@ th {
   display: -moz-box;
   display: -ms-flexbox;
   display: flex;
-  border: 1px solid #ececec;
-  background-color: #ffffff; }
+  border: 1px solid #ececec; }
   .advantages__list .slick-dots {
     padding: 0;
     margin: 0;
@@ -455,7 +454,8 @@ th {
       -ms-flex: 1 1 auto;
           flex: 1 1 auto;
   padding: 65px 33px 50px;
-  border-right: 1px solid #ececec; }
+  border-right: 1px solid #ececec;
+  background-color: #ffffff; }
   .advantages__item:last-child {
     border-right-width: 0; }
 
@@ -1875,14 +1875,14 @@ body.modal-open {
   margin: 0 auto;
   width: 102px;
   height: 102px;
-  z-index: 1;
-  border-radius: 50%; }
+  z-index: 1; }
   .testimonials__slide-image img {
     display: block;
     width: 100%;
     height: auto;
     max-width: 100%;
-    max-height: 100%; }
+    max-height: 100%;
+    border-radius: 50%; }
 
 .testimonials__slide-content {
   padding: 51px 35px 35px;
@@ -1994,6 +1994,8 @@ body.modal-open {
   background-image: -webkit-linear-gradient(left, #77112c 0%, #77112c 38%, transparent 38%);
   background-image: -moz- oldlinear-gradient(left, #77112c 0%, #77112c 38%, transparent 38%);
   background-image: linear-gradient(to right, #77112c 0%, #77112c 38%, transparent 38%); }
+  .top-screen .wow {
+    visibility: hidden; }
 
 .top-screen__header {
   margin-bottom: 5px; }

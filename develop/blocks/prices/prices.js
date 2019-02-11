@@ -15,12 +15,12 @@
     });
 
     $slider.on("beforeChange", function(event, slick, currentSlide, nextSlide) {
-        $slides.removeClass("fadeOutUp fadeOutDown fadeInDown fadeInUp");
+        $slides.removeClass("fadeOutUp fadeOutDown fadeInDown fadeInUp wow");
         $slides
             .eq(currentSlide)
-            .addClass("fadeOutUp");
+            .addClass("fadeOutUp animated");
         $slides
             .eq(nextSlide)
-            .addClass("fadeInDown");
+            .addClass("fadeInDown animated");
     });
 })();

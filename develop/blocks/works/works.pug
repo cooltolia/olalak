@@ -2,21 +2,22 @@ mixin works()
     +b.SECTION.works
         +inner
             +e.content
-                +e.H2.title Наши<br> работы
+                +e.H2.title.fadeIn.wow
+                    | Наши<br> работы
                 +e.slider
                     +e.slide
                         +e.images
-                            +e.A.image(href='images/works/work1.jpg' data-fancybox="gallery" rel='works')
+                            +e.A.image.fadeInDown.wow(data-wow-delay="0.2s" href='images/works/work1.jpg' data-fancybox="gallery" rel='works')
                                 img(data-lazy="images/works/work1.jpg", alt="")
-                            +e.A.image(href='images/works/work2.jpg' data-fancybox="gallery" rel='works')
+                            +e.A.image.fadeInDown.wow(data-wow-delay="0.4s" href='images/works/work2.jpg' data-fancybox="gallery" rel='works')
                                 img(data-lazy="images/works/work2.jpg", alt="")
-                            +e.A.image(href='images/works/work3.jpg' data-fancybox="gallery" rel='works')
+                            +e.A.image.fadeInDown.wow(data-wow-delay="0.6s" href='images/works/work3.jpg' data-fancybox="gallery" rel='works')
                                 img(data-lazy="images/works/work3.jpg", alt="")
-                            +e.A.image(href='images/works/work4.jpg' data-fancybox="gallery" rel='works')
+                            +e.A.image.fadeInDown.wow(data-wow-delay="0.8s" href='images/works/work4.jpg' data-fancybox="gallery" rel='works')
                                 img(data-lazy="images/works/work4.jpg", alt="")
-                            +e.A.image(href='images/works/work5.jpg' data-fancybox="gallery" rel='works')
+                            +e.A.image.fadeInDown.wow(data-wow-delay="1s" href='images/works/work5.jpg' data-fancybox="gallery" rel='works')
                                 img(data-lazy="images/works/work5.jpg", alt="")
-                            +e.A.image(href='images/works/work6.jpg' data-fancybox="gallery" rel='works')
+                            +e.A.image.fadeInDown.wow(data-wow-delay="1.2s" href='images/works/work6.jpg' data-fancybox="gallery" rel='works')
                                 img(data-lazy="images/works/work6.jpg", alt="")
                     +e.slide
                         +e.images

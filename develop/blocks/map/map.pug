@@ -1,7 +1,7 @@
 mixin map(id)
     +b.map(id='#{id}')
         +e.inner#map
-        +e.data
+        +e.data.fadeInDown.wow(data-wow-delay="0.4s")
             +e.logo
                 img(src="images/logo-theme.svg", alt="Olalak")
             +e.addresses

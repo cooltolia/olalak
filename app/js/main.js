@@ -3,6 +3,11 @@ $.noConflict();
 jQuery(document).ready(function ($) {
     $("body").removeClass("pageload");
 
+    var wow = new WOW({
+        mobile: false
+    });
+    wow.init();
+
      (function() {
 
          var $slider = $(".advantages__list");
@@ -626,19 +631,19 @@ jQuery(document).ready(function ($) {
 
          $slider.on("beforeChange", function(event, slick, currentSlide, nextSlide) {
 
-             $slides.removeClass("fadeOutUp fadeOutDown fadeInDown fadeInUp");
+             $slides.removeClass("fadeOutUp fadeOutDown fadeInDown fadeInUp wow");
 
              $slides
 
                  .eq(currentSlide)
 
-                 .addClass("fadeOutUp");
+                 .addClass("fadeOutUp animated");
 
              $slides
 
                  .eq(nextSlide)
 
-                 .addClass("fadeInDown");
+                 .addClass("fadeInDown animated");
 
          });
 
@@ -679,22 +684,6 @@ jQuery(document).ready(function ($) {
 
              lazyLoad: "ondemand",
 
-             // swipe: false
-
-             // responsive: [{
-
-             //     breakpoint: 769,
-
-             //     settings: {
-
-             //         slidesToShow: 2,
-
-             //         slidesToScroll: 1,
-
-             //     }
-
-             // }]
-
          });
 
      
@@ -705,9 +694,9 @@ jQuery(document).ready(function ($) {
 
          $slider.on("beforeChange", function(event, slick, currentSlide, nextSlide) {
 
-             slides.find(".promo__content").removeClass("fadeOutUp fadeOutDown fadeInDown fadeInUp");
+             slides.find(".promo__content").removeClass("fadeOutUp fadeOutDown fadeInDown fadeInUp wow").removeAttr("style data-wow-delay data-wow-offset");
 
-             slides.find(".promo__image").removeClass("fadeOutUp fadeOutDown fadeInDown fadeInUp");
+             slides.find(".promo__image").removeClass("fadeOutUp fadeOutDown fadeInDown fadeInUp wow").removeAttr("style data-wow-delay data-wow-offset");
 
              slides
 
@@ -715,7 +704,7 @@ jQuery(document).ready(function ($) {
 
                  .find(".promo__content")
 
-                 .addClass("fadeOutUp");
+                 .addClass("fadeOutUp animated");
 
              slides
 
@@ -723,7 +712,7 @@ jQuery(document).ready(function ($) {
 
                  .find(".promo__image")
 
-                 .addClass("fadeOutDown");
+                 .addClass("fadeOutDown animated");
 
      
 
@@ -733,7 +722,7 @@ jQuery(document).ready(function ($) {
 
                  .find(".promo__content")
 
-                 .addClass("fadeInDown");
+                 .addClass("fadeInDown animated");
 
              slides
 
@@ -741,7 +730,7 @@ jQuery(document).ready(function ($) {
 
                  .find(".promo__image")
 
-                 .addClass("fadeInUp");
+                 .addClass("fadeInUp animated");
 
          });
 
@@ -764,7 +753,7 @@ jQuery(document).ready(function ($) {
 
              slidesToShow: 3,
 
-             slidesToScroll: 1,
+             slidesToScroll: 3,
 
              adaptiveHeight: true,
 

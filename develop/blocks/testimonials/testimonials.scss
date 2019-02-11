@@ -99,10 +99,9 @@
     height: 102px;
     z-index: 1;
 
-    border-radius: 50%;
-
     img {
         @include img;
+        border-radius: 50%;
     }
 }
 

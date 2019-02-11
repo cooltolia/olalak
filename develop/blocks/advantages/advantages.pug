@@ -1,14 +1,15 @@
 mixin advantages()
     +b.SECTION.advantages
         +inner
-            +e.H2.title
+            +e.H2.title.fadeInDown.wow(data-wow-delay="0.4s")
                 | Почему клиенты выбирают нас
             +e.UL.list
                 for item, index in advantages
-                    +e.LI.item
+                    -var delay = 0.2 * (index+1)
+                    +e.LI.item.fadeInDown.wow(data-wow-delay=delay+"s")
                         +e.item-icon
                             img(src="images/advantages/advantage" + index + ".svg" , alt="")
                         +e.item-title= item.title
                         +e.P.item-text= item.text
-            +e.form
+            +e.form.fadeIn.wow(data-wow-delay="0.6s")
                 +main-form

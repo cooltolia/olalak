@@ -1,13 +1,13 @@
 mixin top-screen()
     +b.SECTION.top-screen
-        +e.header
+        +e.header.fadeIn.wow(data-wow-delay="0.4s")
             +main-header
-        +e.socials
+        +e.socials.fadeIn.wow(data-wow-delay="0.4s")
             +socials
         +inner
             +e.content
-                +e.image
+                +e.image.fadeInDown.wow(data-wow-delay="0.4s")
                     img(src='images/top-screen/intro.jpg')
-                +e.H1.title Студия маникюра
-                +e.logo
+                +e.H1.title.fadeInDown.wow(data-wow-delay="0.8s") Студия маникюра
+                +e.logo.fadeInDown.wow(data-wow-delay="1.2s")
                     img(src='images/top-screen/logo-shadow.png')

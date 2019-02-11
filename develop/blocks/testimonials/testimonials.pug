@@ -2,11 +2,13 @@ mixin testimonials()
     +b.SECTION.testimonials
         +inner
             +e.content
-                +e.H2.title Отзывы
+                +e.H2.title.fadeInDown.wow(data-wow-delay="0.4s")
+                    | Отзывы
                 +e.slider
                     each item, index in testimonials.list
+                        -var delay = 0.4 + 0.2 * (index+1)
                         +e.slide
-                            +e.slide-inner
+                            +e.slide-inner.fadeInDown.wow(data-wow-delay=delay+"s")
                                 +e.slide-image
                                     img(src='images/testimonials/slide' +   index + '.jpg')
                                 +e.slide-content
