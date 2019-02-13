@@ -120,7 +120,7 @@
 .works__images {
     display: flex;
     flex-flow: row wrap;
-    justify-content: center;
+    justify-content: flex-start;
     margin: 0 -11px;
 
     &::before {
@@ -161,6 +161,10 @@
     .works__slider {
         .slick-dots {
             right: -80px;
+        }
+
+        .custom-dots {
+            top: -45px;
         }
     }
 
@@ -241,6 +245,10 @@
         text-align: center;
     }
 
+    .works__images {
+        justify-content: center;
+    }
+
     .works__image {
         width: 168px;
         height: 168px;
@@ -265,7 +273,7 @@
         display: none;
     }
 
-    .works__image:nth-child(n+4) {
+    .works__image:nth-child(n+3) {
         display: none;
     }
 

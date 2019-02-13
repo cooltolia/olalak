@@ -67,7 +67,7 @@
         
         // continue watching from 4th image
         var fancygroup = $("a[rel='works']");
-        var fancyelem = $(fancygroup.get(3));
+        var fancyelem = $(fancygroup.get(2));
         fancyelem.click();
     });
 

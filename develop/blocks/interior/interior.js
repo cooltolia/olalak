@@ -38,8 +38,8 @@
 
     $slider.slick({
         infinite: true,
-        slidesToShow: 4,
-        slidesToScroll: 4,
+        slidesToShow: 3,
+        slidesToScroll: 3,
         adaptiveHeight: false,
         arrows: false,
         dots: true,

@@ -6,7 +6,7 @@ $(window).on('load', function() {
     }
 
     var address;
-    address = [55.775450, 37.631004];
+    address = [55.739667, 37.663543];
 
     //Переменная для определения была ли хоть раз загружена Яндекс.Карта (чтобы избежать повторной загрузки)
     var check_if_load = false;
@@ -26,8 +26,8 @@ $(window).on('load', function() {
                     controls: []
                 });
 
-                var pointA = [55.77295318071541, 37.63288889128495],
-                    pointB = address;
+                // var pointA = [55.77295318071541, 37.63288889128495],
+                //     pointB = address;
 
 
                 var myPlacemark = new ymaps.Placemark(myMap.getCenter(), {
@@ -38,7 +38,7 @@ $(window).on('load', function() {
                         // Необходимо указать данный тип макета.
                         iconLayout: 'default#image',
                         // Своё изображение иконки метки.
-                        iconImageHref: '../images/map-icon.png',
+                        iconImageHref: './images/map-icon.png',
                         // Размеры метки.
                         iconImageSize: [30, 30],
                         // Смещение левого верхнего угла иконки относительно

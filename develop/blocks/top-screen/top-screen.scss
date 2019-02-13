@@ -51,7 +51,7 @@
     height: 381px;
     position: absolute;
     right: 0;
-    bottom: -60%;
+    bottom: -80%;
     z-index: 1;
 
     img {
@@ -145,9 +145,10 @@
 
     .top-screen__title {
         right: 55px;
+        max-width: 400px;
 
         font-size: 40px;
-        text-align: right;
+        text-align: left;
     }
 
     .top-screen__socials {

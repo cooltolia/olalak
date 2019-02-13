@@ -137,9 +137,9 @@ jQuery(document).ready(function ($) {
 
              infinite: true,
 
-             slidesToShow: 4,
+             slidesToShow: 3,
 
-             slidesToScroll: 4,
+             slidesToScroll: 3,
 
              adaptiveHeight: false,
 
@@ -264,7 +264,7 @@ jQuery(document).ready(function ($) {
 
          var address;
 
-         address = [55.775450, 37.631004];
+         address = [55.739667, 37.663543];
 
      
 
@@ -304,9 +304,9 @@ jQuery(document).ready(function ($) {
 
      
 
-                     var pointA = [55.77295318071541, 37.63288889128495],
+                     // var pointA = [55.77295318071541, 37.63288889128495],
 
-                         pointB = address;
+                     //     pointB = address;
 
      
 
@@ -328,7 +328,7 @@ jQuery(document).ready(function ($) {
 
                              // Своё изображение иконки метки.
 
-                             iconImageHref: '../images/map-icon.png',
+                             iconImageHref: './images/map-icon.png',
 
                              // Размеры метки.
 
@@ -1071,7 +1071,7 @@ jQuery(document).ready(function ($) {
 
              var fancygroup = $("a[rel='works']");
 
-             var fancyelem = $(fancygroup.get(3));
+             var fancyelem = $(fancygroup.get(2));
 
              fancyelem.click();
 
